@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#211522">
+<title>Three Months, Still You ♡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<style>
+:root{--night:#211522;--plum:#38243a;--wine:#563348;--rose:#d99ab2;--blush:#f0c7d4;--gold:#e6c99b;--cream:#fff6ed;--muted:#cbb8c7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 5%,#56354d 0,transparent 38%),radial-gradient(ellipse at 88% 28%,#3b3450 0,transparent 34%),linear-gradient(145deg,#1b1420,#2b1b2b 52%,#1d1a2a);color:var(--cream);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+button{font:inherit}button:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{position:absolute;color:#fff0d9;opacity:.65;animation:twinkle 3.5s ease-in-out infinite;text-shadow:0 0 12px #f5d7e6}
+@keyframes twinkle{50%{opacity:1;transform:scale(1.5)}}
+.petal{position:absolute;top:-30px;width:12px;height:19px;border-radius:90% 10% 90% 10%;background:linear-gradient(145deg,#f7d5df,#bd7897);opacity:.7;animation:fall linear infinite;filter:drop-shadow(0 0 5px #e8a9c4)}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(620deg)}}
+.wrap{position:relative;z-index:1;width:min(100% - 28px,820px);margin:auto;padding:22px 0 105px}
+.top{display:flex;justify-content:space-between;align-items:center;color:#d7b8c9;font-size:9px;letter-spacing:2.5px;text-transform:uppercase;padding:4px 4px 17px}
+.brand{font-family:"Parisienne",cursive;color:var(--gold);font-size:22px;letter-spacing:0;text-transform:none}
+.page{display:none}.page.active{display:block;animation:pageIn .8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pageIn{from{opacity:0;transform:translateY(22px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:blur(0)}}
+.panel{position:relative;min-height:690px;padding:clamp(38px,7vw,70px) clamp(20px,7vw,68px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px solid rgba(230,201,155,.52);border-radius:5px 34px 5px 34px;background:linear-gradient(145deg,rgba(75,48,67,.91),rgba(42,31,48,.94) 55%,rgba(57,43,62,.92));box-shadow:0 24px 80px rgba(0,0,0,.3),inset 0 0 0 7px rgba(230,201,155,.045),inset 0 0 45px rgba(218,153,180,.06);overflow:hidden}
+.panel:before{content:"";position:absolute;inset:12px;border:1px solid rgba(230,201,155,.22);border-radius:2px 25px 2px 25px;pointer-events:none}
+.panel:after{content:"✦";position:absolute;top:22px;right:27px;color:var(--gold);font-size:17px;opacity:.8}
+.eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:0 0 22px}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:.98;margin:0;color:#fff3e9}
+h1{font-size:clamp(54px,11vw,100px)}h2{font-size:clamp(40px,8vw,68px)}
+h1 em,h2 em{font-style:italic;color:var(--blush)}
+.lead{max-width:520px;color:#dfcbd7;font-size:13px;line-height:2;margin:24px auto}
+.script{font-family:"Parisienne",cursive;color:var(--blush);font-size:clamp(27px,5vw,39px)}
+.rule{width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:22px auto}
+.date{font-size:10px;letter-spacing:3px;color:#d7b8c9;text-transform:uppercase}
+.seal{width:76px;height:76px;border:1px solid rgba(230,201,155,.75);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:29px;margin:0 auto 25px;box-shadow:0 0 0 7px rgba(230,201,155,.05),0 0 35px rgba(230,201,155,.12);animation:seal 4s ease-in-out infinite}
+@keyframes seal{50%{box-shadow:0 0 0 11px rgba(230,201,155,.035),0 0 48px rgba(230,201,155,.22)}}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
+.btn{border:1px solid rgba(230,201,155,.65);background:rgba(255,255,255,.035);color:#f5e5e5;padding:13px 20px;border-radius:2px 18px 2px 18px;cursor:pointer;font-size:9px;letter-spacing:1.4px;text-transform:uppercase;transition:.25s}
+.btn.primary{background:linear-gradient(120deg,#e8c7d1,#c58ba7);color:#382337;border-color:#f2d7df;font-weight:700}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 22px #120c1880}
+.counter{margin-top:17px;font-size:9px;letter-spacing:2px;color:#bda8ba}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%;max-width:570px;margin:22px auto}
+.tile{border:1px solid rgba(230,201,155,.32);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));padding:20px 15px;text-align:left;min-height:125px;transition:.3s}
+.tile:hover{transform:translateY(-4px);border-color:var(--gold)}
+.tile .symbol{font-size:23px;color:var(--gold)}.tile h3{font:500 23px "Cormorant Garamond",serif;margin:8px 0 5px;color:#fff0e8}.tile p{font-size:11px;line-height:1.75;color:#d5c1d0;margin:0}
+.note{max-width:570px;width:100%;text-align:left;padding:clamp(20px,5vw,34px);margin:20px 0;background:linear-gradient(135deg,rgba(255,246,237,.97),rgba(248,225,231,.96));color:#594052;box-shadow:0 12px 34px #100b1680;position:relative}
+.note:before{content:"";position:absolute;inset:8px;border:1px solid rgba(151,94,122,.24);pointer-events:none}
+.note p{font:16px/1.9 "Cormorant Garamond",serif;margin:0 0 15px;color:#61475a}.note .script{color:#a45f7d;text-align:right}
+.promises{display:grid;gap:10px;width:100%;max-width:570px;margin:20px auto}
+.promise{padding:14px 17px;border-left:2px solid var(--gold);background:rgba(255,255,255,.055);text-align:left;color:#e5d3dd;font:16px/1.7 "Cormorant Garamond",serif}
+.promise b{color:var(--blush);font-weight:600}
+.gift-area{height:250px;width:250px;position:relative;display:grid;place-items:end center;margin:12px auto 20px;cursor:pointer}
+/* Ornate velvet keepsake box with satin bands, gilded corners and a jewel clasp */
+.box{width:160px;height:96px;position:absolute;bottom:22px;border:1px solid #e8c995;border-radius:9px 9px 19px 19px;background:linear-gradient(100deg,#3a2036 0%,#71405a 18%,#4a2943 48%,#79465f 78%,#321e32 100%);box-shadow:0 18px 34px #100b168c,inset 0 2px 10px rgba(255,235,224,.2),inset 0 -15px 24px rgba(12,5,14,.3)}
+.box:before{content:"";position:absolute;inset:7px 8px 9px;border:1px solid rgba(244,213,163,.66);border-radius:5px 5px 14px 14px;box-shadow:inset 0 0 18px rgba(230,201,155,.12)}
+.box:after{content:"✦";position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:37px;height:37px;display:grid;place-items:center;border-radius:50%;border:1px solid #f1d7a6;background:radial-gradient(circle at 35% 28%,#bd8793 0,#79445f 48%,#382039 100%);color:#fff0cb;font-size:19px;text-shadow:0 0 10px rgba(255,226,180,.8);box-shadow:0 0 0 3px rgba(230,201,155,.13),0 0 0 6px rgba(230,201,155,.055),0 3px 12px #170d19aa}
+.lid{position:absolute;bottom:113px;width:176px;height:36px;border:1px solid #f0d5a4;border-radius:10px 10px 5px 5px;background:linear-gradient(105deg,#9c647d 0%,#63364f 24%,#48273f 52%,#80506a 78%,#a16a80 100%);box-shadow:0 9px 17px #100b1688,inset 0 3px 8px rgba(255,240,230,.27),inset 0 -4px 8px rgba(20,8,20,.25);transition:transform .8s;z-index:2}
+.lid:before{content:"";position:absolute;inset:5px 7px;border:1px solid rgba(255,232,199,.7);border-radius:6px 6px 2px 2px;box-shadow:inset 0 0 9px rgba(255,231,191,.12)}
+.lid:after{content:"✧";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:29px;height:29px;display:grid;place-items:center;border:1px solid #f1d7a6;border-radius:50%;background:radial-gradient(circle,#98627a,#4b2c43 75%);color:#fff0ca;font-size:19px;text-shadow:0 0 9px rgba(255,224,177,.8);box-shadow:0 0 0 3px rgba(230,201,155,.12)}
+.box-ribbon{position:absolute;z-index:1;left:calc(50% - 10px);top:0;width:20px;height:100%;background:linear-gradient(90deg,#b78391,#f2d5c5 45%,#b78391);border-left:1px solid rgba(255,235,207,.6);border-right:1px solid rgba(65,30,49,.35);opacity:.9}
+.box-corner{position:absolute;z-index:2;width:15px;height:15px;border:1px solid #e8c995;opacity:.9}
+.box-corner.tl{left:5px;top:5px;border-right:0;border-bottom:0;border-radius:5px 0 0}
+.box-corner.tr{right:5px;top:5px;border-left:0;border-bottom:0;border-radius:0 5px 0 0}
+.box-corner.bl{left:5px;bottom:5px;border-right:0;border-top:0;border-radius:0 0 0 5px}
+.box-corner.br{right:5px;bottom:5px;border-left:0;border-top:0;border-radius:0 0 5px}
+.lid-ribbon{position:absolute;z-index:1;left:calc(50% - 10px);top:0;width:20px;height:100%;background:linear-gradient(90deg,#bd8997,#f7dfcd 48%,#bd8997);border-left:1px solid rgba(255,240,220,.7);border-right:1px solid rgba(65,30,49,.3)}
+.gift-area.open .lid{transform:translate(24px,-45px) rotate(15deg)}
+.gift-area.open{cursor:default}
+
+/* A tiny animated teddy bear tucked inside the present */
+.teddy{
+  position:absolute;z-index:4;left:50%;bottom:26px;width:92px;height:118px;
+  transform:translate(-50%,58px) scale(.48);transform-origin:bottom center;
+  opacity:0;pointer-events:none;filter:drop-shadow(0 7px 8px rgba(20,10,18,.28));
+}
+.teddy .ear{position:absolute;top:2px;width:31px;height:31px;border-radius:50%;
+  background:radial-gradient(circle at 38% 32%,#f5d5b9,#b9785b 72%);border:2px solid #f8dfc8}
+.teddy .ear.left{left:9px}.teddy .ear.right{right:9px}
+.teddy .ear:after{content:"";position:absolute;inset:7px;border-radius:50%;background:#d99b91}
+.teddy .head{position:absolute;top:9px;left:15px;width:62px;height:57px;border-radius:48% 48% 46% 46%;
+  background:radial-gradient(circle at 35% 25%,#f6dfc9,#c58b6b 75%);border:2px solid #f9e4d1}
+.teddy .muzzle{position:absolute;left:18px;top:27px;width:27px;height:20px;border-radius:50%;
+  background:linear-gradient(145deg,#fff0df,#e8c7aa)}
+.teddy .eye{position:absolute;top:23px;width:5px;height:7px;border-radius:50%;background:#49302d}
+.teddy .eye.left{left:16px}.teddy .eye.right{right:16px}
+.teddy .nose{position:absolute;left:29px;top:32px;width:8px;height:6px;border-radius:50% 50% 45% 45%;background:#70443e}
+.teddy .smile{position:absolute;left:31px;top:38px;width:8px;height:5px;border-bottom:1.5px solid #87554d;border-radius:50%}
+.teddy .body{position:absolute;left:20px;top:57px;width:53px;height:49px;border-radius:45% 45% 40% 40%;
+  background:radial-gradient(circle at 35% 22%,#f3d8bf,#b97d60 78%);border:2px solid #f5ddc8}
+.teddy .belly{position:absolute;left:10px;top:12px;width:29px;height:27px;border-radius:50%;background:#f0d4bd}
+.teddy .arm{
+  position:absolute;z-index:8;top:67px;width:18px;height:32px;
+  border-radius:50%;background:linear-gradient(145deg,#f0d0b4 0%,#c58b6b 78%);
+  border:2px solid #f7dfca;box-shadow:0 2px 4px rgba(76,39,31,.16);
+}
+.teddy .arm:after{
+  content:"";position:absolute;left:1px;bottom:-4px;width:17px;height:15px;
+  border-radius:50%;background:linear-gradient(145deg,#f3d7bf,#c58b6b);
+  border:1.5px solid #f7dfca;
+}
+/* Teddy arms returned to their original relaxed pose; not hugging the bouquet */
+.teddy .arm.left{display:block;left:12px;right:auto;top:67px;transform:rotate(-48deg);transform-origin:top center}
+.teddy .arm.right{display:block;right:10px;left:auto;top:67px;transform:rotate(48deg);transform-origin:top center}
+.teddy .leg{position:absolute;top:91px;width:29px;height:23px;border-radius:50%;background:linear-gradient(145deg,#e9c6a8,#b77a5e);border:2px solid #f5ddc8}
+.teddy .leg.left{left:17px;transform:rotate(12deg)}.teddy .leg.right{right:12px;transform:rotate(-12deg)}
+.teddy .heart{position:absolute;z-index:2;left:37px;top:76px;color:#a64f70;font-size:14px;text-shadow:0 1px 4px #fff0e8}
+.gift-area.open .teddy{opacity:1;transform:translate(-50%,-34px) scale(1.22);animation:teddyPop .95s cubic-bezier(.16,1,.3,1) both,teddySway 3.2s 1s ease-in-out infinite}
+@keyframes teddyPop{0%{opacity:0;transform:translate(-50%,45px) scale(.4) rotate(-12deg)}70%{opacity:1;transform:translate(-50%,-42px) scale(1.28) rotate(5deg)}100%{opacity:1;transform:translate(-50%,-34px) scale(1.22) rotate(0)}}
+@keyframes teddySway{0%,100%{rotate:0deg}25%{rotate:3deg}75%{rotate:-3deg}}
+@media(prefers-reduced-motion:reduce){.gift-area.open .teddy{animation:none;opacity:1;transform:translate(-50%,-34px) scale(1.22)}}
+
+/* A compact, rounded hand-tied bouquet — no long cone */
+.teddy-bouquet{
+  position:absolute;z-index:7;left:50%;top:48px;width:72px;height:56px;
+  transform:translateX(-50%) rotate(-5deg);pointer-events:none;
+}
+.teddy-bouquet .stem{
+  position:absolute;z-index:0;top:20px;left:35px;width:2px;height:12px;
+  border-radius:3px;background:linear-gradient(#86a77c,#557b60);
+  transform-origin:bottom;transform:rotate(3deg);
+}
+.teddy-bouquet .flower{
+  position:absolute;z-index:2;width:14px;height:14px;border-radius:50%;
+  background:radial-gradient(circle,#f6c96e 0 17%,transparent 19%),
+    radial-gradient(ellipse at 50% 0%,#fff2f5 0 35%,transparent 39%),
+    radial-gradient(ellipse at 100% 50%,#f4aec5 0 35%,transparent 39%),
+    radial-gradient(ellipse at 50% 100%,#fff0f4 0 35%,transparent 39%),
+    radial-gradient(ellipse at 0% 50%,#f4aec5 0 35%,transparent 39%);
+  filter:drop-shadow(0 0 4px rgba(255,215,232,.95)) drop-shadow(0 0 9px rgba(255,153,199,.72));
+  animation:flowerGlow 2.6s ease-in-out infinite alternate;
+}
+/* rounded flower dome: 9 blooms, layered tightly so the bear stays visible */
+.teddy-bouquet .f1{left:8px;top:13px;transform:scale(.92)}
+.teddy-bouquet .f2{left:21px;top:5px;transform:scale(1.04);animation-delay:.3s}
+.teddy-bouquet .f3{left:35px;top:3px;transform:scale(1.08);animation-delay:.7s}
+.teddy-bouquet .f4{left:48px;top:12px;transform:scale(.94);animation-delay:1s}
+.teddy-bouquet .f5{left:14px;top:23px;transform:scale(.88);animation-delay:.6s}
+.teddy-bouquet .f6{left:28px;top:19px;transform:scale(1.02);animation-delay:1.2s}
+.teddy-bouquet .f7{left:42px;top:24px;transform:scale(.9);animation-delay:.9s}
+.teddy-bouquet .f8{left:25px;top:0;transform:scale(.82);animation-delay:1.5s}
+.teddy-bouquet .f9{left:37px;top:30px;transform:scale(.78);animation-delay:1.8s}
+.teddy-bouquet .leaf{position:absolute;z-index:1;top:29px;left:8px;width:13px;height:6px;border-radius:100% 0 100% 0;background:#789a75;transform:rotate(-24deg)}
+.teddy-bouquet .leaf.second{left:51px;top:29px;transform:rotate(205deg)}
+/* Tiny bouquet band. Explicitly reset the global .wrap layout styles. */
+.teddy-bouquet .wrap{
+  position:absolute;z-index:3;left:25px;top:33px;width:23px;height:7px;
+  margin:0;padding:0;min-height:0;max-height:7px;
+  border-radius:2px 2px 4px 4px;
+  background:linear-gradient(100deg,#eebbd0 0%,#fff0f5 48%,#dc9ab9 100%);
+  clip-path:polygon(0 0,100% 0,72% 100%,28% 100%);
+  box-shadow:0 1px 3px rgba(75,35,54,.18);
+}
+.teddy-bouquet .bow{position:absolute;z-index:4;left:34px;top:34px;width:7px;height:6px;border-radius:80% 15% 80% 15%;background:#ffe8ef;transform:rotate(35deg);box-shadow:4px -1px 0 -1px #ffe8ef,-3px 5px 0 -2px #fff0f4}
+@keyframes flowerGlow{from{filter:drop-shadow(0 0 2px rgba(255,220,235,.7)) drop-shadow(0 0 4px rgba(255,166,205,.35))}to{filter:drop-shadow(0 0 5px rgba(255,238,245,1)) drop-shadow(0 0 11px rgba(255,154,198,.8))}}
+.gift-area.open .teddy-bouquet{animation:heldBouquet 1s .22s cubic-bezier(.2,.8,.2,1) both}
+@keyframes heldBouquet{0%{opacity:0;transform:translate(-50%,16px) rotate(-22deg) scale(.55)}75%{opacity:1;transform:translate(-50%,-3px) rotate(-2deg) scale(1.08)}100%{opacity:1;transform:translate(-50%,0) rotate(-5deg) scale(1)}}
+@media(prefers-reduced-motion:reduce){.gift-area.open .teddy-bouquet{animation:none}}
+
+/* Confetti stays inside the gift area and behind the teddy */
+.gift-confetti{position:absolute;inset:8px 12px 22px;z-index:3;overflow:visible;pointer-events:none}
+.gift-confetti i{position:absolute;left:50%;top:58%;width:9px;height:15px;border-radius:3px;background:var(--confetti);opacity:0;transform:translate(-50%,-50%);filter:drop-shadow(0 1px 3px rgba(255,226,232,.28));}
+.gift-area.confetti-active .gift-confetti i{animation:confettiBehind 3s ease-in-out infinite;animation-delay:var(--delay)}
+@keyframes confettiBehind{0%{opacity:0;transform:translate(-50%,-50%) rotate(0) scale(.55)}10%{opacity:1}76%{opacity:.95}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--spin)) scale(1.12)}}
+
+
+.hidden-note{display:none;max-width:500px;padding:20px;background:rgba(255,255,255,.07);border:1px solid rgba(230,201,155,.3);color:#e8d7e0;line-height:1.9;font:16px "Cormorant Garamond",serif}
+.hidden-note.show{display:block;animation:pageIn .7s both}
+.final-quote{max-width:560px;font:clamp(22px,4.5vw,32px)/1.55 "Cormorant Garamond",serif;color:#f4dce5;margin:22px auto}
+.music{position:fixed;z-index:5;left:50%;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(340px,calc(100% - 24px));display:grid;grid-template-columns:40px 1fr 30px;align-items:center;gap:10px;padding:9px 12px;border:1px solid rgba(230,201,155,.55);background:rgba(37,25,41,.9);backdrop-filter:blur(14px);border-radius:3px 20px 3px 20px;box-shadow:0 10px 30px #100b1680}
+.music button{border:1px solid #e9c9d6;background:#d8a6bb;color:#352337;width:38px;height:38px;border-radius:50%;cursor:pointer}
+.track{font-size:10px;letter-spacing:1px;color:#f0dce5}.track small{display:block;font-size:8px;color:#bca7b8;margin-top:4px;letter-spacing:1.4px;text-transform:uppercase}
+#status{font-size:9px;color:var(--gold)}
+@media(max-width:520px){.wrap{width:calc(100% - 16px);padding-top:12px}.top{font-size:7px;letter-spacing:1.5px}.panel{min-height:650px;padding:48px 20px}.grid{gap:8px}.tile{padding:15px 11px;min-height:130px}.tile h3{font-size:20px}.tile p{font-size:10px}.note p{font-size:15px}.music{bottom:calc(7px + env(safe-area-inset-bottom))}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+/* CINEMATIC MOTION UPGRADE */
+body:before, body:after{
+  content:"";position:fixed;pointer-events:none;z-index:0;inset:-20%;
+  background:radial-gradient(circle at 25% 35%,rgba(225,157,190,.12),transparent 22%),
+             radial-gradient(circle at 78% 68%,rgba(221,190,143,.10),transparent 20%);
+  animation:ambientDrift 22s ease-in-out infinite alternate;
+}
+body:after{animation-duration:29s;animation-direction:alternate-reverse;opacity:.75}
+@keyframes ambientDrift{0%{transform:translate3d(-2%,1%,0) rotate(0deg) scale(1)}100%{transform:translate3d(3%,-2%,0) rotate(9deg) scale(1.12)}}
+.panel{isolation:isolate}
+.panel:before{animation:frameGlow 7s ease-in-out infinite}
+@keyframes frameGlow{0%,100%{border-color:rgba(230,201,155,.18);box-shadow:inset 0 0 0 0 rgba(230,201,155,0)}50%{border-color:rgba(245,214,174,.48);box-shadow:inset 0 0 22px rgba(230,201,155,.055)}}
+.panel:after{animation:ornamentFloat 4.5s ease-in-out infinite}
+@keyframes ornamentFloat{0%,100%{transform:translateY(0) rotate(0);opacity:.55}50%{transform:translateY(-5px) rotate(18deg);opacity:1}}
+.page.active .eyebrow{animation:softRise .75s .08s both}
+.page.active h1,.page.active h2{animation:titleReveal 1s .14s cubic-bezier(.16,1,.3,1) both}
+.page.active .lead{animation:softRise .85s .28s both}
+.page.active .rule,.page.active .date,.page.active .script,.page.active .seal{animation:softRise .85s .38s both}
+.page.active .grid .tile,.page.active .promises .promise{animation:softRise .7s both}
+.page.active .grid .tile:nth-child(2),.page.active .promises .promise:nth-child(2){animation-delay:.12s}
+.page.active .grid .tile:nth-child(3),.page.active .promises .promise:nth-child(3){animation-delay:.22s}
+.page.active .grid .tile:nth-child(4),.page.active .promises .promise:nth-child(4){animation-delay:.32s}
+.page.active .actions{animation:softRise .8s .48s both}
+@keyframes softRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes titleReveal{from{opacity:0;transform:translateY(22px);letter-spacing:3px;filter:blur(7px)}to{opacity:1;transform:none;letter-spacing:normal;filter:blur(0)}}
+.tile{position:relative;overflow:hidden}
+.tile:after{content:"";position:absolute;inset:-80% auto -80% -45%;width:35%;transform:rotate(22deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transition:left .8s ease}
+.tile:hover:after{left:130%}
+.btn{position:relative;overflow:hidden}
+.btn:after{content:"";position:absolute;top:-50%;left:-80%;width:45%;height:200%;transform:rotate(24deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transition:left .7s ease}
+.btn:hover:after{left:140%}
+.seal{position:relative}
+.seal:after{content:"";position:absolute;inset:-8px;border:1px solid rgba(230,201,155,.24);border-radius:50%;animation:sealOrbit 9s linear infinite}
+@keyframes sealOrbit{to{transform:rotate(360deg)}}
+.petal{will-change:transform;animation-name:fall,petalSway;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite}
+@keyframes petalSway{0%,100%{margin-left:0}50%{margin-left:22px}}
+.star{will-change:transform,opacity}
+.note{animation:paperFloat 7s ease-in-out infinite}
+@keyframes paperFloat{0%,100%{transform:translateY(0) rotate(-.25deg)}50%{transform:translateY(-5px) rotate(.25deg)}}
+.gift-area:not(.open){animation:giftTease 2.8s ease-in-out infinite}
+@keyframes giftTease{0%,100%{transform:translateY(0) rotate(0)}15%{transform:translateY(-3px) rotate(-2deg)}30%{transform:translateY(0) rotate(2deg)}45%{transform:translateY(-2px) rotate(-1deg)}}
+.gift-area.open .box{animation:giftGlow 1.5s ease-in-out 2}
+@keyframes giftGlow{50%{filter:brightness(1.2);box-shadow:0 12px 40px rgba(239,177,207,.35)}}
+.bouquet{letter-spacing:5px;text-shadow:0 0 18px rgba(255,211,227,.7);animation:none}
+.gift-area.open .bouquet{animation:bouquetBloom 1.2s .2s cubic-bezier(.16,1,.3,1) both}
+@keyframes bouquetBloom{0%{opacity:0;transform:translateY(45px) scale(.35) rotate(-12deg);filter:blur(5px)}65%{opacity:1;transform:translateY(-42px) scale(1.12) rotate(4deg);filter:blur(0)}100%{opacity:1;transform:translateY(-35px) scale(1) rotate(0)}}
+.hidden-note.show{animation:noteReveal .9s .35s both}
+@keyframes noteReveal{from{opacity:0;transform:translateY(20px) scale(.97);filter:blur(4px)}to{opacity:1;transform:none;filter:blur(0)}}
+.final-quote{animation:quoteGlow 5s ease-in-out infinite}
+@keyframes quoteGlow{0%,100%{text-shadow:0 0 0 rgba(240,199,212,0)}50%{text-shadow:0 0 24px rgba(240,199,212,.22)}}
+@media(prefers-reduced-motion:reduce){
+ body:before,body:after,.panel:before,.panel:after,.page.active .eyebrow,.page.active h1,.page.active h2,.page.active .lead,.page.active .rule,.page.active .date,.page.active .script,.page.active .seal,.page.active .grid .tile,.page.active .promises .promise,.page.active .actions,.seal:after,.note,.gift-area:not(.open),.final-quote{animation:none!important}
+}
+
+
+/* Refined six-page closing composition */
+#p6 .panel{padding-top:clamp(34px,6vh,58px);padding-bottom:clamp(34px,6vh,58px)}
+#p6 .final-quote{max-width:520px;margin:22px auto 18px;font-size:clamp(19px,2.5vw,25px);line-height:1.55}
+#p6 .script{margin:14px 0;color:var(--gold);font-size:clamp(23px,3vw,30px)}
+#p6 .date{margin-top:16px;letter-spacing:2px}
+
+.opening-panel{min-height:690px;background:radial-gradient(ellipse at 50% 32%,rgba(217,154,178,.18),transparent 43%),linear-gradient(145deg,rgba(75,48,67,.94),rgba(42,31,48,.97) 55%,rgba(57,43,62,.95))}
+.opening-panel h1{font-size:clamp(58px,12vw,108px);letter-spacing:-1.5px;text-shadow:0 8px 35px rgba(0,0,0,.22)}
+.opening-panel .seal{margin-bottom:28px}
+.closing-note{max-width:590px;margin:26px auto 0;padding:8px 12px 0;text-align:center}
+.closing-note .final-quote{font:italic 22px/1.65 "Cormorant Garamond",serif;color:#f4dce5;margin:14px auto;max-width:510px}
+.closing-note .lead{margin:14px auto}
+.closing-note .script{font-size:clamp(25px,4vw,34px);margin:16px auto}
+.closing-note .date{line-height:1.9}
+@media(max-width:520px){.opening-panel{min-height:620px}.closing-note{padding-inline:2px}}
+
+/* Six-page editorial polish */
+.panel{background:radial-gradient(ellipse at 50% 0%,rgba(217,154,178,.13),transparent 43%),linear-gradient(145deg,rgba(82,49,72,.95),rgba(35,26,42,.97) 58%,rgba(57,41,62,.95));box-shadow:0 28px 90px rgba(0,0,0,.34),inset 0 0 0 7px rgba(230,201,155,.05),inset 0 0 55px rgba(218,153,180,.075)}
+.panel:before{inset:13px;border-color:rgba(230,201,155,.28)}
+.panel:after{content:"✦  ·  ✦";top:23px;right:27px;letter-spacing:5px;font-size:11px}
+.tile{position:relative;overflow:hidden;border-radius:3px 18px 3px 18px;background:linear-gradient(145deg,rgba(255,246,237,.105),rgba(255,255,255,.025));box-shadow:inset 0 1px rgba(255,255,255,.08)}
+.tile:after{content:"";position:absolute;right:-28px;bottom:-35px;width:90px;height:90px;border:1px solid rgba(230,201,155,.16);border-radius:50%;box-shadow:0 0 0 9px rgba(230,201,155,.025),0 0 0 19px rgba(230,201,155,.02)}
+.tile .symbol{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid rgba(230,201,155,.38);border-radius:50%;background:rgba(230,201,155,.07)}
+.promise{border:1px solid rgba(230,201,155,.16);border-left:2px solid var(--gold);border-radius:2px 14px 2px 14px;background:linear-gradient(110deg,rgba(255,255,255,.075),rgba(255,255,255,.025));padding:15px 18px}
+.note{border-radius:2px 22px 2px 22px;box-shadow:0 16px 42px rgba(12,7,17,.36)}
+.btn{backdrop-filter:blur(8px)}
+@media(max-width:520px){.grid{gap:9px}.tile{padding:16px 12px;min-height:138px}.tile h3{font-size:21px}.tile p{font-size:10px}.panel{min-height:650px}}
+
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<main class="wrap">
+<header class="top"><span>AN ONLINE KEEPSAKE</span><span class="brand">for Jo ♡</span><span>23 · 12 · 26</span></header>
+
+<section class="page active" id="p1"><div class="panel opening-panel">
+<div class="seal">♡</div>
+<p class="eyebrow">A little celebration of us · 23 December 2026</p>
+<h1>Three Months,<br><em>Still You.</em></h1>
+<div class="rule"></div>
+<p class="script">For Jo, with all my love.</p>
+<p class="lead">Three months of learning, laughing, choosing, and finding new reasons to be grateful that this is our story.</p>
+<div class="date">23 · 09 · 26 — 23 · 12 · 26</div>
+<div class="actions"><button class="btn primary" onclick="go(2)">Open our story →</button></div>
+<div class="counter">01 / 06</div>
+</div></section>
+
+<section class="page" id="p2"><div class="panel">
+<p class="eyebrow">02 · the things i keep</p><h2>Moments that<br><em>stay with me.</em></h2>
+<p class="lead">Some memories don't need a photograph. Sometimes, all it takes is remembering how a moment made you feel.</p>
+<div class="promises">
+<div class="promise"><b>01 / The check-ins</b><br>Those small messages that quietly say, “I'm here. I'm thinking of you.”</div>
+<div class="promise"><b>02 / The calls</b><br>Hearing your voice and letting the rest of the day slow down for a while.</div>
+<div class="promise"><b>03 / The care</b><br>The reminders, the concern, and the way we try to look after each other.</div>
+<div class="promise"><b>04 / The choosing</b><br>Finding our way back to understanding, even after a difficult conversation.</div>
+</div>
+<div class="actions"><button class="btn" onclick="go(1)">Back</button><button class="btn primary" onclick="go(3)">A letter for you →</button></div><div class="counter">02 / 06</div>
+</div></section>
+
+<section class="page" id="p3"><div class="panel">
+<p class="eyebrow">03 · written from my side of the world</p><h2>Dear Jo,</h2>
+<div class="note">
+<p>Three months. It may sound like a small number to everyone else, but to me, it holds so many conversations, adjustments, laughs, and moments that have slowly become part of my everyday life.</p>
+<p>I love that I get to know you in the details — the stories you tell, the thoughts that cross your mind, the things that make you happy, and even the days when you don't feel like yourself. I don't expect us to agree on everything. I just hope we keep choosing patience, honesty, and the willingness to understand each other.</p>
+<p>Distance is part of our story right now, but it doesn't make what we share any less meaningful. I want to keep showing up for you in the ways I can, and keep making something good with you, one day at a time.</p>
+<p class="script">Always choosing you, ♡</p>
+</div>
+<div class="actions"><button class="btn" onclick="go(2)">Back</button><button class="btn primary" onclick="go(4)">One thing I promise →</button></div><div class="counter">03 / 06</div>
+</div></section>
+
+<section class="page" id="p4"><div class="panel">
+<p class="eyebrow">04 · not perfect, but intentional</p><h2>What I want<br><em>to keep giving.</em></h2>
+<p class="lead">Not grand promises. Just the kind of love that is built through the ordinary choices.</p>
+<div class="promises">
+<div class="promise">I want to <b>listen</b>, not just wait for my turn to speak.</div>
+<div class="promise">I want to <b>communicate</b>, especially when something feels difficult.</div>
+<div class="promise">I want to <b>celebrate you</b> on the loud days and be gentle with you on the quiet ones.</div>
+<div class="promise">I want us to keep making space for <b>both of us</b> to grow.</div>
+</div>
+<div class="actions"><button class="btn" onclick="go(3)">Back</button><button class="btn primary" onclick="go(5)">There's a gift →</button></div><div class="counter">04 / 06</div>
+</div></section>
+
+<section class="page" id="p5"><div class="panel">
+<p class="eyebrow">05 · the details i adore</p><h2>The Things I Adore<br><em>About You.</em></h2>
+<p class="lead">It's not just the big moments. It's the little things that make knowing you feel special, even from miles away.</p>
+<div class="grid">
+  <article class="tile"><span class="symbol">✧</span><h3>Your little stories</h3><p>The random details, updates, and thoughts you let me be part of. I love getting to know your world.</p></article>
+  <article class="tile"><span class="symbol">♡</span><h3>Your soft side</h3><p>The care you show in your own ways, even through a screen and across the distance.</p></article>
+  <article class="tile"><span class="symbol">☾</span><h3>Our ordinary days</h3><p>The calls, the check-ins, and the comfort of having someone to look forward to.</p></article>
+  <article class="tile"><span class="symbol">✦</span><h3>Our growing</h3><p>Learning each other better, making room for differences, and choosing to understand.</p></article>
+</div>
+<p class="script">I hope you feel loved in all the little ways, too. ♡</p>
+<div class="actions"><button class="btn" onclick="go(4)">Back</button><button class="btn primary" onclick="go(6)">A surprise for you →</button></div><div class="counter">05 / 06</div>
+</div></section>
+
+<section class="page" id="p6"><div class="panel">
+<p class="eyebrow">06 · something i made for you</p><h2>A little surprise<br><em>with your name on it.</em></h2>
+<p class="lead">Tap the present. I made this part just for you.</p>
+<div class="gift-area" id="gift" onclick="openGift()">
+<div class="gift-confetti" aria-hidden="true"></div>
+<div class="teddy" aria-hidden="true">
+  <span class="ear left"></span><span class="ear right"></span>
+  <span class="head"><i class="eye left"></i><i class="eye right"></i><i class="muzzle"></i><i class="nose"></i><i class="smile"></i></span>
+  <span class="arm left"></span><span class="arm right"></span>
+  <span class="body"><i class="belly"></i></span>
+  <span class="leg left"></span><span class="leg right"></span>
+  <span class="heart">♥</span>
+  <span class="teddy-bouquet" aria-hidden="true">
+    <i class="stem"></i><i class="leaf"></i><i class="leaf second"></i>
+    <i class="flower f1"></i><i class="flower f2"></i><i class="flower f3"></i>
+    <i class="flower f4"></i><i class="flower f5"></i><i class="flower f6"></i>
+    <i class="flower f7"></i><i class="flower f8"></i><i class="flower f9"></i>
+    <i class="wrap"></i><i class="bow"></i>
+  </span>
+</div>
+<div class="lid"><span class="lid-ribbon"></span></div><div class="box"><span class="box-ribbon"></span><i class="box-corner tl"></i><i class="box-corner tr"></i><i class="box-corner bl"></i><i class="box-corner br"></i></div></div>
+<div class="hidden-note" id="giftNote">If I could wrap up all the affection I have for you, it would still need a bigger box. So here's a tiny handmade reminder instead: you are loved, Jo. ♡</div>
+<div class="closing-note">
+  <div class="rule"></div><p class="final-quote">“I don't need every day to be perfect. I just want us to keep making the days worth remembering.”</p>
+  <p class="lead">Thank you for being here, for letting me know you, and for making this chapter something I look forward to continuing.</p>
+  <p class="script">Three months down. More memories to make, more reasons to keep choosing each other.</p>
+  <p class="date">Happy 3rd Monthsary, Jo. · I love you, always. ♡</p>
+</div>
+<div class="actions"><button class="btn" onclick="go(5)">Back</button><button class="btn primary" onclick="go(1)">Read it again ↺</button></div><div class="counter">06 / 06</div>
+</div></section>
+
+
+</main>
+
+<div class="music">
+<button id="play" aria-label="Play music" onclick="toggleMusic()">▶</button>
+<div class="track">A song for this chapter<small id="status">add your instrumental mp3 link</small></div>
+<span style="color:#e6c99b">♫</span>
+</div>
+<audio id="audio" loop preload="none"></audio>
+<script>
+const sky=document.getElementById('sky');
+for(let i=0;i<52;i++){const s=document.createElement('span');s.className='star';s.textContent='✦';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.fontSize=(5+Math.random()*9)+'px';s.style.animationDelay=(Math.random()*4)+'s';sky.appendChild(s)}
+for(let i=0;i<34;i++){const p=document.createElement('span');p.className='petal';p.style.left=Math.random()*100+'%';p.style.animationDuration=(11+Math.random()*15)+'s';p.style.animationDelay=(-Math.random()*22)+'s';p.style.setProperty('--drift',(Math.random()*180-90)+'px');p.style.opacity=(.25+Math.random()*.55);p.style.width=(8+Math.random()*8)+'px';p.style.height=(13+Math.random()*12)+'px';p.style.animationDelay=(-Math.random()*24)+'s, '+(-Math.random()*5)+'s';sky.appendChild(p)}
+let current=1;
+function go(n){if(n<1||n>6||n===current)return;if(current===6&&n!==6){document.getElementById('gift').classList.remove('confetti-active')}document.getElementById('p'+current).classList.remove('active');current=n;document.getElementById('p'+current).classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+function openGift(){
+ const g=document.getElementById('gift');
+ if(g.classList.contains('open'))return;
+ g.classList.add('open','confetti-active');
+ document.getElementById('giftNote').classList.add('show');
+ const confetti=g.querySelector('.gift-confetti');
+ const confettiColors=['var(--rose)','var(--blush)','var(--gold)','var(--cream)','#c58b9f'];
+ for(let i=0;i<42;i++){
+   const bit=document.createElement('i');
+   bit.style.setProperty('--confetti',confettiColors[i%confettiColors.length]);
+   bit.style.setProperty('--x',`${(Math.random()-.5)*290}px`);
+   bit.style.setProperty('--y',`${-45-Math.random()*190}px`);
+   bit.style.setProperty('--spin',`${Math.random()*540-270}deg`);
+   bit.style.setProperty('--delay',`${Math.random()*2.8}s`);
+   bit.style.width=`${8+Math.random()*4}px`;
+   bit.style.height=`${13+Math.random()*5}px`;
+   if(i%6===0){bit.style.width='10px';bit.style.height='10px';bit.style.borderRadius='50%'}
+   else if(i%4===0){bit.style.borderRadius='1px';bit.style.transform='translate(-50%,-50%) rotate(45deg)'}
+   confetti.appendChild(bit);
+ }
+}
+const audio=document.getElementById('audio'),play=document.getElementById('play'),status=document.getElementById('status');
+// Paste a direct MP3 URL into the src below when you choose the soundtrack.
+audio.src='';
+async function toggleMusic(){if(!audio.src||audio.src===location.href){status.textContent='add your instrumental mp3 link in the HTML';return}if(audio.paused){try{await audio.play();play.textContent='Ⅱ';status.textContent='playing for you ♡'}catch(e){status.textContent='tap again to play'}}else{audio.pause();play.textContent='▶';status.textContent='paused'}}
+</script>
+</body>
+</html>
