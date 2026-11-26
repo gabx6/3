@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#211522">
+<title>Three Months, Still You ♡</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=DM+Sans:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --night:#211522;
+  --plum:#30213d;
+  --purple:#57436f;
+  --pink:#ffb9d5;
+  --pink2:#f28fb9;
+  --blue:#a9dfff;
+  --blue2:#70bce8;
+  --lilac:#d9c4ff;
+  --cream:#fff4e8;
+  --ink:#49364f;
+  --gold:#ffe09b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;min-height:100vh;overflow-x:hidden;
+  color:var(--cream);
+  font-family:"VT323",monospace;
+  background:
+    linear-gradient(135deg,#20162b,#30203c 48%,#211b35);
+  image-rendering:pixelated;
+}
+button{font:inherit}
+button:focus-visible{outline:3px dashed var(--blue);outline-offset:5px}
+#sky{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.star{
+  position:absolute;display:block;width:12px;height:12px;opacity:.8;
+  font-family:"Press Start 2P",monospace;
+  animation:pixelTwinkle 2.8s steps(2) infinite;
+  text-shadow:3px 3px 0 #76578e;
+}
+@keyframes pixelTwinkle{50%{opacity:.25;transform:scale(.7)}}
+.petal{
+  position:absolute;top:-30px;width:12px;height:12px;
+  border-radius:0;background:var(--pink);
+  box-shadow:3px 3px 0 #b66e9c;
+  animation:fall linear infinite;
+}
+@keyframes fall{
+  to{transform:translate3d(var(--drift),110vh,0) rotate(360deg)}
+}
+.wrap{
+  position:relative;z-index:1;
+  width:min(100% - 28px,820px);
+  margin:auto;padding:22px 0 105px;
+}
+.top{
+  display:flex;justify-content:space-between;align-items:center;
+  color:var(--blue);font-family:"Press Start 2P",monospace;
+  font-size:8px;line-height:1.8;letter-spacing:0;
+  text-transform:uppercase;padding:4px 4px 18px;gap:8px;
+}
+.brand{
+  font-family:"Press Start 2P",monospace;
+  color:var(--pink);font-size:10px;
+}
+.page{display:none}
+.page.active{display:block;animation:pageIn .5s steps(5) both}
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:none}
+}
+.panel{
+  position:relative;min-height:690px;
+  padding:clamp(38px,7vw,70px) clamp(20px,7vw,68px);
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;
+  border:4px solid var(--blue);
+  border-radius:0;
+  background:
+    linear-gradient(135deg,rgba(67,48,82,.98),rgba(39,30,55,.98));
+  box-shadow:
+    8px 8px 0 #15101e,
+    12px 12px 0 var(--pink2),
+    inset 0 0 0 4px rgba(255,255,255,.08);
+  overflow:hidden;
+}
+.panel:before{
+  content:"";position:absolute;inset:12px;
+  border:2px dashed rgba(255,185,213,.6);
+  pointer-events:none;
+}
+.panel:after{
+  content:"✦  ♡  ✦";
+  position:absolute;top:25px;right:25px;
+  color:var(--pink);font-size:13px;
+  font-family:"Press Start 2P",monospace;
+  animation:pixelTwinkle 2.5s steps(2) infinite;
+}
+.eyebrow{
+  font-family:"Press Start 2P",monospace;
+  font-size:8px;line-height:2;
+  color:var(--blue);margin:0 0 22px;
+}
+h1,h2{
+  font-family:"Press Start 2P",monospace;
+  font-weight:400;line-height:1.55;
+  margin:0;color:var(--cream);
+  text-shadow:4px 4px 0 #8d5b91;
+}
+h1{font-size:clamp(25px,5.5vw,43px)}
+h2{font-size:clamp(19px,4vw,29px)}
+h1 em,h2 em{font-style:normal;color:var(--pink)}
+.lead{
+  max-width:520px;color:#e8d9ed;
+  font-family:"VT323",monospace;font-size:22px;line-height:1.35;margin:24px auto;
+}
+.script{
+  font-family:"Parisienne",cursive;
+  color:var(--pink);font-size:clamp(27px,5vw,39px);
+}
+.rule{
+  width:100px;height:5px;
+  background:repeating-linear-gradient(90deg,var(--blue) 0 8px,transparent 8px 12px);
+  margin:22px auto;
+}
+.date{
+  font-family:"Press Start 2P",monospace;
+  font-size:8px;line-height:2;
+  color:var(--blue);text-transform:uppercase;
+}
+.seal{
+  width:76px;height:76px;display:grid;place-items:center;
+  border:4px solid var(--pink);border-radius:0;
+  color:var(--pink);font-size:30px;margin:0 auto 25px;
+  background:#453052;
+  box-shadow:5px 5px 0 var(--blue2),9px 9px 0 #211522;
+  animation:sealBounce 2s steps(2) infinite;
+}
+@keyframes sealBounce{50%{transform:translateY(-5px)}}
+.actions{
+  display:flex;justify-content:center;gap:12px;
+  flex-wrap:wrap;margin-top:26px;
+}
+.btn{
+  border:3px solid var(--blue);
+  background:#433052;color:var(--cream);
+  padding:13px 17px;border-radius:0;
+  cursor:pointer;font-family:"Press Start 2P",monospace;
+  font-size:8px;line-height:1.8;
+  box-shadow:4px 4px 0 #17111e;
+  transition:transform .12s,box-shadow .12s;
+}
+.btn.primary{
+  background:var(--pink);color:#39253d;
+  border-color:#ffe0ed;
+  box-shadow:4px 4px 0 #a65e8b;
+}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #17111e}
+.btn:active{transform:translate(4px,4px);box-shadow:none}
+.counter{
+  margin-top:20px;font-family:"Press Start 2P",monospace;
+  font-size:8px;color:var(--blue);letter-spacing:0;
+}
+.grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;width:100%;max-width:570px;margin:22px auto;
+}
+.tile{
+  border:3px solid var(--pink);
+  background:#fff0f5;color:var(--ink);
+  padding:20px 15px;text-align:left;
+  min-height:125px;position:relative;
+  box-shadow:4px 4px 0 #a66b9c;
+  transition:transform .15s;
+}
+.tile:hover{transform:translateY(-4px)}
+.tile .symbol{
+  font-size:22px;color:#a65f91;
+  display:inline-block;
+}
+.tile h3{
+  font-family:"Press Start 2P",monospace;
+  font-size:9px;line-height:1.8;
+  margin:10px 0 7px;color:#68456d;
+}
+.tile p{font:19px/1.2 "VT323",monospace;color:#614e65;margin:0}
+.note{
+  max-width:570px;width:100%;text-align:left;
+  padding:clamp(20px,5vw,34px);margin:20px 0;
+  background:#fff0f5;color:#594052;
+  border:4px solid var(--pink);
+  box-shadow:6px 6px 0 #9b699e;
+  position:relative;
+}
+.note:before{
+  content:"";position:absolute;inset:8px;
+  border:2px dashed #d89ab9;pointer-events:none;
+}
+.note p{
+  font:21px/1.42 "VT323",monospace;
+  margin:0 0 15px;color:#61475a;
+}
+.note .script{color:#a45f7d;text-align:right}
+.promises{
+  display:grid;gap:12px;width:100%;
+  max-width:570px;margin:20px auto;
+}
+.promise{
+  padding:14px 17px;border:2px solid var(--blue);
+  background:#302541;text-align:left;
+  color:#e5d3dd;font:21px/1.35 "VT323",monospace;
+  box-shadow:4px 4px 0 #17111e;
+}
+.promise b{color:var(--pink);font-weight:700}
+.gift-area{
+  height:250px;width:250px;position:relative;
+  display:grid;place-items:end center;
+  margin:12px auto 20px;cursor:pointer;
+}
+.box{
+  width:160px;height:96px;position:absolute;bottom:22px;
+  border:4px solid #ffe0a5;border-radius:0;
+  background:repeating-linear-gradient(90deg,#794b76 0 12px,#895781 12px 24px);
+  box-shadow:6px 6px 0 #211522,inset 0 0 0 5px #573452;
+}
+.box:before{
+  content:"";position:absolute;inset:8px;
+  border:2px dashed #ffe0a5;
+}
+.box:after{
+  content:"♥";position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  color:var(--pink);font-size:28px;
+  text-shadow:3px 3px 0 #9c5681;
+}
+.lid{
+  position:absolute;bottom:113px;width:176px;height:36px;
+  border:4px solid #ffe0a5;border-radius:0;
+  background:repeating-linear-gradient(90deg,#bd82a5 0 12px,#d99db9 12px 24px);
+  box-shadow:5px 5px 0 #211522;
+  transition:transform .8s;z-index:2;
+}
+.lid:before{
+  content:"";position:absolute;inset:5px;
+  border:2px dashed #fff0d1;
+}
+.lid:after{
+  content:"✦";position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  color:#fff0d1;font-size:20px;
+}
+.box-ribbon,.lid-ribbon{display:none}
+.box-corner{display:none}
+.gift-area.open .lid{transform:translate(24px,-45px) rotate(15deg)}
+.gift-area.open{cursor:default}
+.teddy{
+  position:absolute;z-index:4;left:50%;bottom:26px;
+  width:92px;height:118px;
+  transform:translate(-50%,58px) scale(.48);
+  transform-origin:bottom center;opacity:0;
+  pointer-events:none;
+  filter:drop-shadow(4px 4px 0 rgba(20,10,18,.25));
+}
+.teddy .ear{
+  position:absolute;top:2px;width:31px;height:31px;
+  border-radius:0;background:#d9a17e;
+  border:4px solid #f8dfc8;
+}
+.teddy .ear.left{left:9px}.teddy .ear.right{right:9px}
+.teddy .ear:after{
+  content:"";position:absolute;inset:6px;
+  background:#d99b91;
+}
+.teddy .head{
+  position:absolute;top:9px;left:15px;width:62px;height:57px;
+  border-radius:0;background:#d9aa87;
+  border:4px solid #f9e4d1;
+}
+.teddy .muzzle{
+  position:absolute;left:18px;top:27px;width:27px;height:20px;
+  border-radius:0;background:#fff0df;
+}
+.teddy .eye{
+  position:absolute;top:23px;width:5px;height:7px;
+  border-radius:0;background:#49302d;
+}
+.teddy .eye.left{left:16px}.teddy .eye.right{right:16px}
+.teddy .nose{
+  position:absolute;left:29px;top:32px;width:8px;height:6px;
+  background:#70443e;
+}
+.teddy .smile{
+  position:absolute;left:31px;top:38px;width:8px;height:5px;
+  border-bottom:2px solid #87554d;
+}
+.teddy .body{
+  position:absolute;left:20px;top:57px;width:53px;height:49px;
+  border-radius:0;background:#d3a17e;
+  border:4px solid #f5ddc8;
+}
+.teddy .belly{
+  position:absolute;left:10px;top:12px;width:29px;height:27px;
+  border-radius:0;background:#f0d4bd;
+}
+.teddy .arm{
+  position:absolute;z-index:8;top:67px;width:18px;height:32px;
+  border-radius:0;background:#d3a17e;
+  border:3px solid #f7dfca;
+}
+.teddy .arm:after{
+  content:"";position:absolute;left:0;bottom:-4px;
+  width:15px;height:13px;background:#d3a17e;
+  border:2px solid #f7dfca;
+}
+.teddy .arm.left{left:12px;transform:rotate(-48deg)}
+.teddy .arm.right{right:10px;transform:rotate(48deg)}
+.teddy .leg{
+  position:absolute;top:91px;width:29px;height:23px;
+  border-radius:0;background:#d3a17e;border:3px solid #f5ddc8;
+}
+.teddy .leg.left{left:17px;transform:rotate(12deg)}
+.teddy .leg.right{right:12px;transform:rotate(-12deg)}
+.teddy .heart{
+  position:absolute;z-index:2;left:37px;top:76px;
+  color:#a64f70;font-size:14px;
+}
+.gift-area.open .teddy{
+  opacity:1;transform:translate(-50%,-34px) scale(1.22);
+  animation:teddyPop .95s steps(5) both,teddySway 3.2s 1s ease-in-out infinite;
+}
+@keyframes teddyPop{
+  0%{opacity:0;transform:translate(-50%,45px) scale(.4)}
+  70%{opacity:1;transform:translate(-50%,-42px) scale(1.28)}
+  100%{opacity:1;transform:translate(-50%,-34px) scale(1.22)}
+}
+@keyframes teddySway{0%,100%{rotate:0deg}25%{rotate:3deg}75%{rotate:-3deg}}
+.teddy-bouquet{
+  position:absolute;z-index:7;left:50%;top:48px;
+  width:72px;height:56px;transform:translateX(-50%) rotate(-5deg);
+  pointer-events:none;
+}
+.teddy-bouquet .stem{
+  position:absolute;z-index:0;top:20px;left:35px;
+  width:3px;height:12px;background:#789a75;
+}
+.teddy-bouquet .flower{
+  position:absolute;z-index:2;width:14px;height:14px;
+  border-radius:0;background:var(--pink);
+  box-shadow:3px 3px 0 #d27ea6,0 0 8px #ffc3e0;
+  animation:flowerGlow 2.6s steps(2) infinite alternate;
+}
+@keyframes flowerGlow{to{filter:brightness(1.3)}}
+.teddy-bouquet .f1{left:8px;top:13px}
+.teddy-bouquet .f2{left:21px;top:5px}
+.teddy-bouquet .f3{left:35px;top:3px}
+.teddy-bouquet .f4{left:48px;top:12px}
+.teddy-bouquet .f5{left:14px;top:23px}
+.teddy-bouquet .f6{left:28px;top:19px}
+.teddy-bouquet .f7{left:42px;top:24px}
+.teddy-bouquet .f8{left:25px;top:0}
+.teddy-bouquet .f9{left:37px;top:30px}
+.teddy-bouquet .leaf{
+  position:absolute;z-index:1;top:29px;left:8px;
+  width:13px;height:6px;background:#789a75;
+}
+.teddy-bouquet .leaf.second{left:51px;top:29px}
+.teddy-bouquet .wrap{
+  position:absolute;z-index:3;left:25px;top:33px;
+  width:23px;height:7px;background:#eebbd0;
+  clip-path:polygon(0 0,100% 0,72% 100%,28% 100%);
+}
+.teddy-bouquet .bow{
+  position:absolute;z-index:4;left:34px;top:34px;
+  width:7px;height:6px;background:#ffe8ef;
+}
+.gift-area.open .teddy-bouquet{
+  animation:heldBouquet 1s .22s steps(5) both;
+}
+@keyframes heldBouquet{
+  0%{opacity:0;transform:translate(-50%,16px) rotate(-22deg) scale(.55)}
+  75%{opacity:1;transform:translate(-50%,-3px) rotate(-2deg) scale(1.08)}
+  100%{opacity:1;transform:translate(-50%,0) rotate(-5deg) scale(1)}
+}
+.gift-confetti{
+  position:absolute;inset:8px 12px 22px;
+  z-index:3;overflow:visible;pointer-events:none;
+}
+.gift-confetti i{
+  position:absolute;left:50%;top:58%;
+  width:9px;height:15px;border-radius:0;
+  background:var(--confetti);opacity:0;
+}
+.gift-area.confetti-active .gift-confetti i{
+  animation:confettiBehind 3s steps(8) infinite;
+  animation-delay:var(--delay);
+}
+@keyframes confettiBehind{
+  0%{opacity:0;transform:translate(-50%,-50%) rotate(0)}
+  10%{opacity:1}
+  76%{opacity:.95}
+  100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--spin))}
+}
+.hidden-note{
+  display:none;max-width:500px;padding:20px;
+  background:#fff0f5;border:3px dashed #d99ab2;
+  color:#594052;line-height:1.9;font:16px "DM Sans",sans-serif;
+  box-shadow:5px 5px 0 #9b699e;
+}
+.hidden-note.show{display:block;animation:pageIn .5s steps(5) both}
+.final-quote{
+  max-width:560px;font:clamp(22px,4.5vw,32px)/1.55 "DM Sans",sans-serif;
+  color:#f4dce5;margin:22px auto;
+}
+.music{
+  position:fixed;z-index:5;left:50%;
+  bottom:calc(12px + env(safe-area-inset-bottom));
+  transform:translateX(-50%);width:min(340px,calc(100% - 24px));
+  display:grid;grid-template-columns:40px 1fr 30px;
+  align-items:center;gap:10px;padding:9px 12px;
+  border:3px solid var(--blue);
+  background:#30213d;border-radius:0;
+  box-shadow:5px 5px 0 #17111e;
+}
+.music button{
+  border:3px solid #ffe0ed;background:var(--pink);
+  color:#352337;width:38px;height:38px;
+  border-radius:0;cursor:pointer;
+  font-family:"Press Start 2P",monospace;font-size:10px;
+}
+.track{font-size:10px;color:#f0dce5}
+.track small{
+  display:block;font-size:8px;color:var(--blue);
+  margin-top:4px;letter-spacing:1px;text-transform:uppercase;
+}
+#status{font-size:9px;color:var(--gold)}
+.opening-panel{min-height:690px}
+.opening-panel h1{font-size:clamp(25px,5.5vw,43px)}
+.opening-panel .seal{margin-bottom:28px}
+.closing-note{max-width:590px;margin:26px auto 0;padding:8px 12px 0;text-align:center}
+.closing-note .final-quote{
+  font:italic 20px/1.65 "DM Sans",sans-serif;
+  color:#f4dce5;margin:14px auto;max-width:510px;
+}
+.closing-note .lead{margin:14px auto}
+.closing-note .script{font-size:clamp(25px,4vw,34px);margin:16px auto}
+.closing-note .date{line-height:2}
+#p6 .panel{padding-top:clamp(34px,6vh,58px);padding-bottom:clamp(34px,6vh,58px)}
+#p6 .final-quote{max-width:520px;margin:22px auto 18px;font-size:clamp(17px,2.5vw,23px)}
+#p6 .script{margin:14px 0;color:var(--blue);font-size:clamp(20px,3vw,27px)}
+#p6 .date{margin-top:16px;letter-spacing:1px}
+.gift-area:not(.open){animation:giftTease 2.8s steps(4) infinite}
+@keyframes giftTease{
+  0%,100%{transform:translateY(0)}
+  30%{transform:translateY(-4px)}
+  60%{transform:translateY(2px)}
+}
+@media(max-width:520px){
+  .wrap{width:calc(100% - 16px);padding-top:12px}
+  .top{font-size:6px;gap:4px}
+  .brand{font-size:7px}
+  .panel{min-height:650px;padding:48px 20px}
+  .grid{gap:9px}
+  .tile{padding:14px 10px;min-height:145px}
+  .tile h3{font-size:9px}
+  .tile p{font-size:10px}
+  .note p{font-size:14px}
+  .music{bottom:calc(7px + env(safe-area-inset-bottom))}
+  .opening-panel{min-height:620px}
+  .closing-note{padding-inline:2px}
+  .btn{font-size:7px;padding:11px 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
+}
+
+/* ==================================
+   NEON ARCADE — PIXEL LOVE EDITION
+================================== */
+
+:root{
+  --night:#090d1f;
+  --plum:#151b3d;
+  --wine:#25265a;
+  --rose:#ff4fd8;
+  --blush:#ff9bea;
+  --gold:#00e5ff;
+  --cream:#eaf6ff;
+  --muted:#aab9e8;
+  --neon-purple:#7547ff;
+  --neon-blue:#00e5ff;
+}
+
+body{
+  background:
+    radial-gradient(ellipse at 15% 15%,#29205d 0%,transparent 38%),
+    radial-gradient(ellipse at 85% 75%,#102e55 0%,transparent 38%),
+    linear-gradient(135deg,#080b1b,#11152e 55%,#090d20);
+  background-attachment:fixed;
+}
+
+/* ARCADE GRID */
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(0,229,255,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,255,.055) 1px,transparent 1px);
+  background-size:38px 38px;
+  mask-image:linear-gradient(to bottom,black,transparent 90%);
+  animation:gridMove 18s linear infinite;
+}
+
+@keyframes gridMove{
+  from{background-position:0 0}
+  to{background-position:38px 38px}
+}
+
+/* SCANLINE */
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.16;
+  background:repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,229,255,.12) 4px
+  );
+}
+
+/* PIXEL FONT DETAILS */
+.top{
+  color:#9cb9ee;
+}
+
+.brand{
+  color:var(--neon-blue);
+  text-shadow:0 0 12px var(--neon-blue);
+}
+
+.eyebrow{
+  color:var(--neon-blue);
+  text-shadow:0 0 12px rgba(0,229,255,.55);
+  letter-spacing:2px;
+}
+
+/* NEON GAME PANEL */
+.panel{
+  border:2px solid rgba(0,229,255,.65);
+  border-radius:8px;
+  background:
+    linear-gradient(145deg,rgba(23,29,67,.97),rgba(10,15,38,.97));
+  box-shadow:
+    0 0 12px rgba(0,229,255,.18),
+    0 0 35px rgba(117,71,255,.18),
+    inset 0 0 35px rgba(0,229,255,.045);
+  animation:panelNeon 5s ease-in-out infinite;
+}
+
+.panel:before{
+  inset:12px;
+  border:1px dashed rgba(255,79,216,.48);
+  border-radius:3px;
+  animation:pixelBorder 8s linear infinite;
+}
+
+@keyframes panelNeon{
+  0%,100%{
+    box-shadow:0 0 12px rgba(0,229,255,.18),
+    0 0 35px rgba(117,71,255,.18);
+  }
+  50%{
+    box-shadow:0 0 20px rgba(0,229,255,.35),
+    0 0 55px rgba(117,71,255,.3);
+  }
+}
+
+@keyframes pixelBorder{
+  to{filter:hue-rotate(70deg)}
+}
+
+/* HEADINGS */
+h1,h2{
+  color:#f4f7ff;
+  text-shadow:0 0 18px rgba(117,71,255,.35);
+}
+
+h1 em,h2 em{
+  color:#ff75df;
+  text-shadow:
+    0 0 10px rgba(255,79,216,.55),
+    0 0 28px rgba(255,79,216,.25);
+}
+
+/* ARCADE BUTTONS */
+.btn{
+  border:2px solid var(--neon-blue);
+  border-radius:4px;
+  background:#121b3b;
+  color:#eaf6ff;
+  box-shadow:3px 3px 0 #7547ff;
+  transition:.25s ease;
+}
+
+.btn.primary{
+  background:linear-gradient(110deg,#7547ff,#b044e8);
+  color:white;
+  border-color:#d8b7ff;
+  box-shadow:
+    0 0 12px rgba(117,71,255,.5),
+    3px 3px 0 #00e5ff;
+}
+
+.btn:hover{
+  transform:translate(-2px,-3px);
+  box-shadow:
+    0 0 18px rgba(0,229,255,.55),
+    4px 5px 0 #ff4fd8;
+}
+
+/* PIXEL CARDS */
+.tile{
+  border:1px solid rgba(0,229,255,.45);
+  border-radius:5px;
+  background:linear-gradient(145deg,
+    rgba(38,43,91,.85),
+    rgba(15,21,49,.95));
+  box-shadow:inset 0 0 18px rgba(117,71,255,.12);
+  transition:transform .35s,box-shadow .35s;
+}
+
+.tile:hover{
+  transform:translateY(-6px) scale(1.025);
+  border-color:#ff4fd8;
+  box-shadow:
+    0 0 18px rgba(255,79,216,.25),
+    inset 0 0 20px rgba(0,229,255,.1);
+}
+
+.tile .symbol{
+  color:#00e5ff;
+  border:1px solid rgba(0,229,255,.55);
+  background:rgba(0,229,255,.08);
+  box-shadow:0 0 12px rgba(0,229,255,.18);
+}
+
+.tile h3{color:#ffb3f0}
+.tile p{color:#c4d0f5}
+
+/* PROMISE CARDS */
+.promise{
+  border:1px solid rgba(117,71,255,.5);
+  border-left:3px solid #00e5ff;
+  border-radius:4px;
+  background:linear-gradient(100deg,
+    rgba(44,48,104,.65),
+    rgba(16,24,53,.8));
+  color:#dce8ff;
+  box-shadow:inset 0 0 14px rgba(117,71,255,.08);
+}
+
+.promise b{color:#ff85e5}
+
+/* LETTER */
+.note{
+  border:2px solid #00e5ff;
+  border-radius:5px;
+  background:linear-gradient(140deg,#e6edff,#f5e4ff);
+  box-shadow:0 0 22px rgba(0,229,255,.2);
+}
+
+.note:before{
+  border:1px dashed rgba(117,71,255,.45);
+}
+
+.note p{color:#30345d}
+.note .script{color:#a43bc4}
+
+/* PIXEL STAR PARTICLES */
+.star{
+  filter:drop-shadow(0 0 5px #00e5ff) drop-shadow(0 0 8px #7547ff);
+  animation:pixelTwinkle 2.5s steps(2) infinite;
+}
+
+@keyframes pixelTwinkle{
+  0%,100%{opacity:.35;transform:scale(.8)}
+  50%{opacity:1;transform:scale(1.5)}
+}
+
+/* FALLING PIXEL PETALS */
+.petal{
+  border-radius:2px;
+  background:linear-gradient(135deg,#ff4fd8,#7547ff);
+  filter:drop-shadow(0 0 5px #ff4fd8);
+}
+
+/* GIFT BOX */
+.box{
+  border:2px solid #00e5ff;
+  border-radius:5px;
+  background:linear-gradient(110deg,#27205e,#55318b,#241d55);
+  box-shadow:
+    0 0 15px rgba(0,229,255,.35),
+    0 0 35px rgba(117,71,255,.3);
+}
+
+.box:before{
+  border:1px dashed #ff8ce9;
+  border-radius:2px;
+}
+
+.box:after{
+  color:#fff;
+  background:radial-gradient(circle,#ff4fd8,#7547ff);
+  border:2px solid #00e5ff;
+  box-shadow:0 0 18px #ff4fd8;
+}
+
+.lid{
+  border:2px solid #00e5ff;
+  border-radius:4px;
+  background:linear-gradient(100deg,#7547ff,#a33fd0,#472c91);
+  box-shadow:0 0 18px rgba(117,71,255,.5);
+}
+
+/* GIFT OPENING GLOW */
+.gift-area.open .box{
+  animation:arcadeGiftGlow 1.5s ease-in-out 2;
+}
+
+@keyframes arcadeGiftGlow{
+  50%{
+    filter:brightness(1.5);
+    box-shadow:
+      0 0 25px #00e5ff,
+      0 0 55px #ff4fd8;
+  }
+}
+
+/* GIFT CONFETTI COLORS */
+.hidden-note{
+  background:rgba(24,31,72,.94);
+  border:1px solid #00e5ff;
+  color:#eaf6ff;
+  box-shadow:0 0 20px rgba(0,229,255,.18);
+}
+
+/* MUSIC PLAYER */
+.music{
+  border:1px solid rgba(0,229,255,.7);
+  border-radius:5px;
+  background:rgba(9,14,35,.95);
+  box-shadow:
+    0 0 15px rgba(0,229,255,.2),
+    0 0 28px rgba(117,71,255,.15);
+}
+
+.music button{
+  background:linear-gradient(135deg,#7547ff,#ff4fd8);
+  color:white;
+  border:1px solid #00e5ff;
+  box-shadow:0 0 12px rgba(0,229,255,.3);
+}
+
+.track{color:#eaf6ff}
+.track small{color:#aebde9}
+#status{color:#00e5ff!important}
+
+/* PAGE TRANSITION */
+.page.active{
+  animation:gameLevelIn .8s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes gameLevelIn{
+  0%{
+    opacity:0;
+    transform:translateY(25px) scale(.96);
+    filter:brightness(1.8) blur(7px);
+  }
+  60%{
+    opacity:1;
+    filter:brightness(1.2) blur(0);
+  }
+  100%{
+    opacity:1;
+    transform:none;
+    filter:brightness(1);
+  }
+}
+
+/* OPENING SEAL */
+.seal{
+  border:2px solid #00e5ff;
+  color:#ff8ce9;
+  box-shadow:
+    0 0 0 7px rgba(0,229,255,.06),
+    0 0 25px rgba(0,229,255,.3);
+}
+
+.seal:after{
+  border:1px dashed #ff4fd8;
+}
+
+/* MOBILE */
+@media(max-width:520px){
+  .panel{
+    border-width:1px;
+    box-shadow:0 0 18px rgba(0,229,255,.16);
+  }
+
+  .tile:hover{
+    transform:translateY(-2px);
+  }
+
+  body:before{
+    background-size:28px 28px;
+  }
+}
+
+/* ===== PIXEL QUEST GATE: EACH PAGE HAS ITS OWN MINI GAME ===== */
+#levelGate{position:fixed;inset:0;z-index:9500;display:none;place-items:center;padding:18px;background:radial-gradient(circle at 50% 35%,rgba(83,54,119,.96),rgba(13,13,34,.98) 72%);}
+#levelGate.show{display:grid;animation:gateFade .28s steps(4) both}
+@keyframes gateFade{from{opacity:0;transform:scale(1.025)}to{opacity:1;transform:none}}
+.gate-card{width:min(94vw,570px);padding:clamp(20px,5vw,36px);text-align:center;background:#211b3b;border:4px solid var(--blue);box-shadow:8px 8px 0 #120e20,12px 12px 0 var(--pink2);position:relative;}
+.gate-card:before{content:"";position:absolute;inset:8px;border:2px dashed rgba(255,185,213,.65);pointer-events:none}
+.gate-kicker{font:8px/2 "Press Start 2P",monospace;color:var(--blue);letter-spacing:1px}
+.gate-card h2{font:clamp(14px,3vw,20px)/1.8 "Press Start 2P",monospace;color:var(--cream);margin:12px 0}
+.gate-instructions{font:23px/1.2 "VT323",monospace;color:#eadcf2;margin:10px auto 16px;max-width:430px}
+.gate-party{display:flex;justify-content:center;align-items:end;gap:20px;height:88px;margin:10px 0 16px}
+.gate-character{display:block;width:48px;height:58px;filter:drop-shadow(4px 4px 0 #111);image-rendering:pixelated;animation:charHop .7s steps(2) infinite alternate}.gate-character svg{display:block;width:100%;height:100%;shape-rendering:crispEdges}.gate-princess{width:45px;height:58px}
+.gate-character:nth-child(2){animation-delay:.2s}.gate-character:nth-child(3){animation-delay:.4s}
+@keyframes charHop{to{transform:translateY(-9px)}}
+.heart-board{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:330px;margin:16px auto}
+.heart-target{min-height:62px;border:3px solid var(--pink);background:#39294f;color:#ffd6e8;font:25px "Press Start 2P",monospace;cursor:pointer;box-shadow:4px 4px 0 #120e20;transition:transform .12s}
+.heart-target:hover{transform:translateY(-3px)}.heart-target.found{opacity:.35;pointer-events:none;background:#203c4e;border-color:var(--blue)}
+.gate-status{font:9px/2 "Press Start 2P",monospace;color:var(--gold);min-height:24px;margin:8px 0}
+.gate-progress{height:10px;max-width:330px;margin:10px auto 16px;background:#100e25;border:2px solid var(--blue);overflow:hidden}
+.gate-progress i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,var(--pink) 0 9px,#ffe4f0 9px 13px);transition:width .2s steps(3)}
+.gate-start{display:none;margin:8px auto 0}.gate-start.ready{display:inline-block;animation:readyBlink .8s steps(2) infinite}
+@keyframes readyBlink{50%{filter:brightness(1.35);transform:translateY(-2px)}}
+@media(max-width:520px){.gate-card{padding:20px 14px}.gate-kicker{font-size:6px}.gate-card h2{font-size:13px}.gate-instructions{font-size:20px}.heart-target{min-height:55px;font-size:20px}}
+
+/* ===== INSIDE THE ARCADE: PIXEL LOVE ===== */
+
+#gameIntro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 50% 45%,#25205c 0%,transparent 48%),
+    linear-gradient(145deg,#080b1b,#111735 55%,#090d20);
+  transition:opacity .9s ease,visibility .9s ease;
+}
+
+#gameIntro:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,229,255,.09) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,229,255,.09) 1px,transparent 1px);
+  background-size:32px 32px;
+  animation:introGrid 12s linear infinite;
+}
+
+#gameIntro:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:repeating-linear-gradient(
+    transparent 0px,transparent 3px,
+    rgba(0,229,255,.08) 4px
+  );
+}
+
+@keyframes introGrid{
+  to{background-position:32px 32px}
+}
+
+#gameIntro.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.intro-content{
+  position:relative;
+  z-index:2;
+  width:min(90%,470px);
+  padding:38px 24px;
+  text-align:center;
+  border:2px solid #00e5ff;
+  background:rgba(13,17,48,.9);
+  box-shadow:
+    0 0 18px rgba(0,229,255,.35),
+    0 0 65px rgba(117,71,255,.25),
+    inset 0 0 35px rgba(117,71,255,.12);
+  animation:introAppear 1.1s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes introAppear{
+  from{opacity:0;transform:scale(.8) translateY(25px);filter:blur(8px)}
+  to{opacity:1;transform:none;filter:blur(0)}
+}
+
+.intro-pixel-heart{
+  font-size:48px;
+  color:#ff4fd8;
+  text-shadow:0 0 12px #ff4fd8,0 0 35px #ff4fd8;
+  animation:heartBeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartBeat{
+  50%{transform:scale(1.22)}
+}
+
+.intro-label,.intro-subtitle,.intro-footer{
+  font-family:'Press Start 2P',monospace;
+  font-size:9px;
+  letter-spacing:2px;
+  color:#00e5ff;
+  line-height:2;
+}
+
+.intro-content h1{
+  font-family:'Press Start 2P',monospace;
+  font-size:clamp(26px,7vw,42px);
+  line-height:1.5;
+  margin:20px 0;
+  color:#fff;
+  text-shadow:4px 4px #7547ff,0 0 25px #7547ff;
+}
+
+.intro-content h1 span{
+  color:#ff65dd;
+}
+
+.intro-line{
+  width:75%;
+  height:2px;
+  margin:22px auto;
+  background:linear-gradient(90deg,transparent,#00e5ff,#ff4fd8,transparent);
+  box-shadow:0 0 12px #00e5ff;
+}
+
+.intro-console{
+  display:grid;
+  gap:12px;
+  margin:28px auto;
+  padding:18px 12px;
+  text-align:left;
+  border:1px dashed rgba(0,229,255,.5);
+  background:rgba(0,229,255,.045);
+  color:#c9d7ff;
+  font-family:'VT323',monospace;
+  font-size:20px;
+}
+
+.start-game{
+  width:100%;
+  padding:17px 10px;
+  background:linear-gradient(100deg,#7547ff,#c23fd5);
+  color:white;
+  border:2px solid #ff9bea;
+  font-family:'Press Start 2P',monospace;
+  font-size:11px;
+  cursor:pointer;
+  box-shadow:0 0 18px rgba(255,79,216,.35),4px 4px #00e5ff;
+  animation:startPulse 1.2s steps(2) infinite;
+}
+
+@keyframes startPulse{
+  50%{filter:brightness(1.35);box-shadow:0 0 28px #ff4fd8,4px 4px #00e5ff}
+}
+
+.start-game:active{
+  transform:translate(3px,3px);
+  box-shadow:none;
+}
+
+.intro-footer{
+  margin:25px 0 0;
+  font-size:7px;
+  color:#aab9e8;
+}
+
+/* PAGE INTERIOR BACKGROUND */
+.panel{
+  position:relative;
+  background:
+    radial-gradient(circle at 8% 12%,rgba(117,71,255,.17),transparent 30%),
+    radial-gradient(circle at 90% 85%,rgba(255,79,216,.12),transparent 28%),
+    linear-gradient(145deg,#171d43 0%,#10152f 55%,#171333 100%);
+  border:2px solid rgba(0,229,255,.65);
+  box-shadow:
+    0 0 16px rgba(0,229,255,.17),
+    0 0 50px rgba(117,71,255,.14),
+    inset 0 0 55px rgba(0,229,255,.045);
+}
+
+.panel:before{
+  border:1px dashed rgba(255,79,216,.45);
+  animation:innerBorderGlow 4s ease-in-out infinite;
+}
+
+@keyframes innerBorderGlow{
+  50%{border-color:rgba(0,229,255,.75)}
+}
+
+/* FLOATING PIXEL DECORATION */
+.panel:after{
+  content:"✦  ♥  ✦";
+  color:#ff65dd;
+  text-shadow:0 0 10px #ff4fd8;
+  animation:decorFloat 3s ease-in-out infinite;
+}
+
+@keyframes decorFloat{
+  50%{transform:translateY(-7px);opacity:1}
+}
+
+/* INNER CONTENT REVEAL */
+.page.active .panel > *{
+  animation:contentEnter .7s both;
+}
+
+.page.active .panel > *:nth-child(2){animation-delay:.08s}
+.page.active .panel > *:nth-child(3){animation-delay:.16s}
+.page.active .panel > *:nth-child(4){animation-delay:.24s}
+.page.active .panel > *:nth-child(5){animation-delay:.32s}
+.page.active .panel > *:nth-child(6){animation-delay:.40s}
+
+@keyframes contentEnter{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* DECORATIVE CORNERS */
+.panel{
+  background-clip:padding-box;
+}
+
+.panel .eyebrow{
+  text-shadow:0 0 12px rgba(0,229,255,.65);
+}
+
+/* BETTER TILE INTERIORS */
+.tile{
+  min-height:145px;
+  border:1px solid rgba(0,229,255,.5);
+  background:
+    linear-gradient(135deg,rgba(117,71,255,.2),transparent 65%),
+    rgba(12,19,47,.9);
+  box-shadow:inset 0 0 20px rgba(0,229,255,.06);
+}
+
+.tile:before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:25px;
+  height:3px;
+  background:#ff4fd8;
+  box-shadow:0 0 10px #ff4fd8;
+}
+
+.tile h3{
+  font-family:'VT323',monospace;
+  font-size:27px;
+  color:#ff9bea;
+}
+
+.tile p{
+  color:#d1dcff;
+}
+
+/* LETTER PAGE — SECRET MESSAGE FEEL */
+.note{
+  position:relative;
+  background:
+    linear-gradient(135deg,#e9eaff,#f7e8ff);
+  border:2px solid #9b79ff;
+  box-shadow:0 0 24px rgba(117,71,255,.25);
+}
+
+.note:after{
+  content:"♥";
+  position:absolute;
+  top:15px;
+  right:20px;
+  color:#d34dcb;
+  opacity:.65;
+  font-size:18px;
+}
+
+/* PROMISE CARDS */
+.promise{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(117,71,255,.55);
+  border-left:3px solid #00e5ff;
+  background:linear-gradient(110deg,rgba(39,47,105,.8),rgba(15,20,49,.95));
+  transition:.3s ease;
+}
+
+.promise:hover{
+  transform:translateX(5px);
+  box-shadow:0 0 18px rgba(0,229,255,.15);
+}
+
+/* GIFT PAGE — GRAND FINALE */
+#p6 .panel{
+  background:
+    radial-gradient(ellipse at 50% 42%,rgba(117,71,255,.2),transparent 48%),
+    linear-gradient(145deg,#191b49,#0b1430 60%,#24143f);
+}
+
+.gift-area.open .gift-confetti i{
+  animation-duration:2.4s;
+}
+
+.gift-area.open .teddy{
+  filter:drop-shadow(0 0 12px rgba(255,79,216,.35));
+}
+
+.gift-area.open .teddy-bouquet .flower{
+  filter:
+    drop-shadow(0 0 6px #fff)
+    drop-shadow(0 0 14px #ff4fd8);
+}
+
+.final-quote{
+  color:#f6eaff;
+  text-shadow:0 0 18px rgba(255,79,216,.25);
+}
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:520px){
+  .intro-content{padding:30px 17px}
+  .intro-console{font-size:17px}
+  .intro-content h1{font-size:26px}
+  .start-game{font-size:9px}
+  .tile{min-height:140px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  #gameIntro *,#gameIntro:before,
+  .panel,.panel:before,.panel:after,
+  .page.active .panel > *{
+    animation:none!important;
+  }
+}
+
+
+/* ==========================================
+   PIXEL PRINCESS QUEST — GAME UI ENHANCEMENT
+========================================== */
+.level-hud{
+  width:100%;max-width:590px;margin:0 auto 26px;
+  padding:12px 14px 10px;
+  border:1px solid rgba(0,229,255,.55);
+  background:linear-gradient(90deg,rgba(8,14,38,.88),rgba(40,27,78,.72));
+  box-shadow:inset 0 0 18px rgba(117,71,255,.16),0 4px 0 rgba(0,0,0,.18);
+  text-align:left;position:relative;z-index:1;
+}
+.level-top{
+  display:flex;justify-content:space-between;align-items:center;gap:8px;
+  color:#a9eaff;font:8px/1.8 "Press Start 2P",monospace;
+}
+.level-top span:nth-child(2){color:#ff9bea;text-align:center}
+.level-top span:last-child{color:#ffe68e;letter-spacing:2px}
+.level-track{
+  height:7px;margin-top:9px;padding:1px;
+  border:1px solid rgba(0,229,255,.5);background:#080d24;
+}
+.level-track i{
+  display:block;height:100%;width:var(--progress);
+  background:linear-gradient(90deg,#00e5ff,#7547ff,#ff4fd8);
+  box-shadow:0 0 9px #00e5ff;
+  animation:levelFill .9s steps(8) both;
+}
+@keyframes levelFill{from{width:0}to{width:var(--progress)}}
+
+.pixel-controller{
+  position:fixed;z-index:20;left:16px;bottom:13px;
+  width:158px;padding:7px 8px 9px;
+  border:2px solid #00e5ff;
+  background:linear-gradient(145deg,#22245b,#0b1230);
+  box-shadow:0 0 14px rgba(0,229,255,.28),4px 4px 0 #070a19;
+  clip-path:polygon(0 8px,8px 8px,8px 0,calc(100% - 8px) 0,calc(100% - 8px) 8px,100% 8px,100% calc(100% - 8px),calc(100% - 8px) calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 8px),0 calc(100% - 8px));
+}
+.controller-label{
+  display:block;text-align:center;margin-bottom:5px;
+  color:#9beeff;font:6px "Press Start 2P",monospace;letter-spacing:1px;
+}
+.controller-body{display:flex;align-items:center;justify-content:space-between;gap:5px}
+.ctrl-btn{
+  width:29px;height:27px;padding:0;cursor:pointer;
+  border:1px solid #ff9bea;background:#673b9c;color:#fff;
+  font:11px "Press Start 2P",monospace;
+  box-shadow:2px 2px 0 #070a19;
+}
+.ctrl-btn:active{transform:translate(2px,2px);box-shadow:none}
+.ctrl-heart{color:#ff9bea;background:#45285f}
+.dpad{width:25px;height:25px;position:relative;display:block}
+.dpad:before,.dpad:after{
+  content:"";position:absolute;background:#b7c9f4;box-shadow:0 0 5px rgba(183,201,244,.25)
+}
+.dpad:before{width:9px;height:25px;left:8px;top:0}
+.dpad:after{height:9px;width:25px;left:0;top:8px}
+.pixel-princess{
+  position:fixed;z-index:8;right:24px;bottom:82px;width:66px;
+  filter:drop-shadow(0 0 10px rgba(255,126,218,.4));
+  animation:princessFloat 2.8s steps(4) infinite;
+  pointer-events:none;
+}
+.pixel-princess svg{display:block;width:100%;height:auto;image-rendering:pixelated}
+.princess-spark{position:absolute;top:4px;right:-8px;width:5px;height:5px;background:#ffe68e;box-shadow:5px 0 #ffe68e,-5px 0 #ffe68e,0 5px #ffe68e,0 -5px #ffe68e,5px 5px #ff9bea,-5px -5px #ff9bea;animation:pixelTwinkle 1.3s steps(2) infinite;}
+@keyframes princessFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.pixel-princess.cheer{animation:princessCheer .65s steps(4) both}
+@keyframes princessCheer{
+  0%{transform:translateY(0) rotate(0)}
+  35%{transform:translateY(-20px) rotate(-8deg)}
+  70%{transform:translateY(-12px) rotate(8deg)}
+  100%{transform:translateY(0) rotate(0)}
+}
+.page .actions .btn{position:relative}
+.page .actions .btn.primary:before{
+  content:"";display:inline-block;width:6px;height:6px;
+  margin-right:7px;background:#ffe68e;vertical-align:middle;
+  box-shadow:0 0 7px #ffe68e;
+}
+@media(max-width:600px){
+  .level-hud{padding:9px 8px;margin-bottom:20px}
+  .level-top{font-size:6px;gap:4px}
+  .pixel-controller{left:9px;bottom:76px;width:126px;padding:6px}
+  .controller-label{font-size:5px}
+  .ctrl-btn{width:24px;height:23px;font-size:9px}
+  .dpad{transform:scale(.85)}
+  .pixel-princess{right:10px;bottom:76px;width:49px}
+  .music{width:min(220px,calc(100% - 150px));left:auto;right:9px;transform:none;grid-template-columns:32px 1fr 18px;gap:6px;padding:6px}
+  .music button{width:30px;height:30px}
+  .track{font-size:8px}
+  .track small{font-size:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pixel-princess,.level-track i{animation:none!important}
+}
+
+
+/* PAGE-BY-PAGE ARCADE MOTION */
+.page.active .panel{animation:panelEnter .62s steps(6) both}
+@keyframes panelEnter{0%{opacity:0;transform:translateY(18px) scale(.985);filter:brightness(1.5)}65%{opacity:1;transform:translateY(-3px) scale(1.005)}100%{opacity:1;transform:none;filter:none}}
+.page.active .eyebrow{animation:pixelSlide .55s .12s steps(5) both}
+.page.active h1,.page.active h2{animation:titlePop .6s .16s steps(5) both}
+.page.active .lead,.page.active .note,.page.active .promises,.page.active .grid,.page.active .gift-area,.page.active .closing-note{animation:contentRise .7s .2s ease both}
+@keyframes pixelSlide{from{opacity:0;transform:translateX(-18px)}to{opacity:1;transform:none}}
+@keyframes titlePop{0%{opacity:0;transform:scale(.88);text-shadow:0 0 0 transparent}70%{opacity:1;transform:scale(1.025)}100%{transform:scale(1)}}
+@keyframes contentRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.page:nth-of-type(1).active .seal{animation:sealBounce .8s steps(3) infinite, pixelGlow 2s ease-in-out infinite}
+.page:nth-of-type(2).active .tile{animation:tileSpawn .5s steps(4) both}
+.page:nth-of-type(2).active .tile:nth-child(2){animation-delay:.08s}.page:nth-of-type(2).active .tile:nth-child(3){animation-delay:.16s}.page:nth-of-type(2).active .tile:nth-child(4){animation-delay:.24s}
+@keyframes tileSpawn{from{opacity:0;transform:translateY(12px) rotate(-2deg)}to{opacity:1;transform:none}}
+.page:nth-of-type(3).active .note{animation:letterUnfold .75s ease both}
+@keyframes letterUnfold{from{opacity:0;transform:perspective(500px) rotateX(12deg) translateY(15px)}to{opacity:1;transform:none}}
+.page:nth-of-type(4).active .promise{animation:promiseIn .5s steps(5) both}
+.page:nth-of-type(4).active .promise:nth-child(2){animation-delay:.08s}.page:nth-of-type(4).active .promise:nth-child(3){animation-delay:.16s}.page:nth-of-type(4).active .promise:nth-child(4){animation-delay:.24s}
+@keyframes promiseIn{from{opacity:0;transform:translateX(-16px)}to{opacity:1;transform:none}}
+.page:nth-of-type(5).active .tile{animation:casePop .5s steps(4) both}
+.page:nth-of-type(5).active .tile:nth-child(2){animation-delay:.08s}.page:nth-of-type(5).active .tile:nth-child(3){animation-delay:.16s}.page:nth-of-type(5).active .tile:nth-child(4){animation-delay:.24s}
+@keyframes casePop{0%{opacity:0;transform:scale(.75) rotate(3deg)}100%{opacity:1;transform:scale(1) rotate(0)}}
+.page:nth-of-type(6).active .gift-area{animation:giftEntrance .8s ease both}
+@keyframes giftEntrance{0%{opacity:0;transform:translateY(18px) scale(.8)}65%{opacity:1;transform:translateY(-5px) scale(1.04)}100%{transform:none}}
+@keyframes pixelGlow{50%{filter:drop-shadow(0 0 9px #ff9bea)}}
+/* Little pixel party companions */
+.pixel-party{position:fixed;z-index:9;right:112px;bottom:17px;display:flex;align-items:flex-end;gap:9px;pointer-events:none}
+.pixel-mascot{width:43px;height:48px;image-rendering:pixelated;filter:drop-shadow(3px 3px 0 #17111e);animation:mascotHop 1.7s steps(3) infinite}
+.pixel-mascot:nth-child(2){animation-delay:.22s}.pixel-mascot:nth-child(3){animation-delay:.44s}
+@keyframes mascotHop{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.pixel-mascot svg{width:100%;height:100%;display:block;shape-rendering:crispEdges}
+.page.active .level-hud{animation:hudFlash .55s steps(4) both}
+@keyframes hudFlash{0%{opacity:0;transform:translateY(-8px);filter:brightness(2)}100%{opacity:1;transform:none;filter:none}}
+@media(max-width:600px){.pixel-party{right:8px;bottom:118px;gap:4px}.pixel-mascot{width:31px;height:36px}}
+@media(prefers-reduced-motion:reduce){.page.active .panel,.page.active .eyebrow,.page.active h1,.page.active h2,.page.active .lead,.page.active .note,.page.active .promises,.page.active .grid,.page.active .gift-area,.page.active .closing-note,.pixel-mascot{animation:none!important}}
+
+
+/* TRUE PIXEL ART GAME ICONS — no emoji glyphs */
+.pixel-sprite{display:inline-block;width:30px;height:30px;vertical-align:middle;image-rendering:pixelated;shape-rendering:crispEdges;filter:drop-shadow(2px 2px 0 #171127)}
+.vault-runes .pixel-sprite,.vault-slot .pixel-sprite{width:25px;height:25px}
+.memory-tile .pixel-sprite{width:34px;height:34px}
+.sequence-lights .pixel-sprite{width:31px;height:31px}
+.dodge-cell .pixel-sprite{width:22px;height:22px}
+.dodge-heart .pixel-sprite{width:15px;height:15px;filter:none}
+.treasure-chest .pixel-sprite{width:38px;height:38px}
+.spell-lock .pixel-sprite{width:26px;height:26px}
+
+/* UNIQUE MINI-GAMES — every level plays differently */
+.game-stage{position:relative;z-index:1;min-height:205px;margin:12px auto 8px;max-width:430px;padding:12px 8px;border:2px solid rgba(189,229,255,.55);background:linear-gradient(145deg,rgba(36,29,66,.95),rgba(54,35,78,.9));box-shadow:inset 0 0 0 4px rgba(255,185,213,.08),4px 4px 0 #100e25}
+.mini-score{font:8px/1.8 "Press Start 2P",monospace;color:#ffe4a8;margin:4px 0 12px}
+.catch-field{height:145px;position:relative;overflow:hidden;border:2px dashed #75b9ed;background:linear-gradient(#25234e,#40335f)}
+.bridge-board{display:grid;gap:7px;max-width:330px;margin:12px auto}.bridge-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.bridge-stone{height:37px;border:3px solid #bde5ff;background:#45315f;color:#fff;font:9px "Press Start 2P",monospace;cursor:pointer;box-shadow:3px 3px #100e25}.bridge-stone:disabled{cursor:default;opacity:.45}.bridge-stone.safe{background:#31584f;border-color:#ffe4a8;opacity:1}.bridge-stone.active{animation:stonePulse .7s steps(3) infinite alternate;border-color:#ffb9d5;background:#684477}@keyframes stonePulse{to{filter:brightness(1.5);transform:translateY(-2px)}}
+.catch-cloud{position:absolute;top:6px;left:44%;font-size:28px;color:#d8eaff}
+.catch-heart{position:absolute;width:42px;height:42px;border:2px solid #ffb9d5;background:#693b79;color:#fff;font:20px "Press Start 2P",monospace;cursor:pointer;box-shadow:3px 3px #171127;animation:heartBob 1s steps(3) infinite alternate;animation-delay:var(--bob)}
+.catch-heart.caught{background:#234a59;border-color:#bde5ff;animation:none;transform:scale(.8)}
+@keyframes heartBob{to{transform:translateY(-10px) rotate(8deg)}}
+.memory-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-width:290px;margin:auto}
+.memory-tile{height:60px;border:3px solid #ffb9d5;background:#45315f;color:#fff;font:22px "Press Start 2P",monospace;cursor:pointer;box-shadow:3px 3px #120e20}
+.memory-tile.revealed{background:#31506c;border-color:#bde5ff}.memory-tile.matched{background:#28584e;border-color:#ffe4a8;opacity:.65}
+.spell-lock{font:30px "Press Start 2P",monospace;color:#ffb9d5;margin:12px}
+.spell-input{width:min(100%,300px);padding:12px 8px;text-align:center;border:3px solid #bde5ff;background:#15162e;color:#fff;font:12px "Press Start 2P",monospace;outline:none}
+.spell-input:focus{box-shadow:0 0 0 3px #ffb9d5}.spell-input.wrong{animation:shake .25s}
+@keyframes shake{25%,75%{transform:translateX(-4px)}50%{transform:translateX(4px)}}
+.mini-action{display:block;margin:12px auto;padding:12px 14px;border:3px solid #ffe4a8;background:#684477;color:#fff;font:8px "Press Start 2P",monospace;cursor:pointer;box-shadow:4px 4px #120e20}
+.mini-hint{font:19px "VT323",monospace;color:#e7d9f5;margin:10px auto 2px}
+.sequence-lights{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:330px;margin:18px auto}
+.sequence-lights button{height:58px;border:3px solid #d8d0ff;background:#4a3b68;color:#fff;font:21px "Press Start 2P",monospace;cursor:pointer;box-shadow:3px 3px #100e25}
+.sequence-lights button:nth-child(2){border-color:#ffb9d5}.sequence-lights button:nth-child(3){border-color:#ffe4a8}.sequence-lights button.lit{background:#fff;color:#47325e;box-shadow:0 0 20px #fff}
+.whack-field{height:145px;position:relative;border:2px dashed #ffb9d5;background:radial-gradient(circle,#59416e,#242044)}
+.yapper-target{position:absolute;width:56px;height:56px;border:3px solid #ffe4a8;background:#44315e;font-size:29px;cursor:pointer;box-shadow:4px 4px #100e25;transition:left .12s,top .12s}
+.chest-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:25px auto 16px}
+.treasure-chest{min-height:90px;border:3px solid #ffe4a8;background:#49335c;color:#fff;font-size:30px;cursor:pointer;box-shadow:4px 4px #100e25}
+.treasure-chest small{display:block;margin-top:8px;font:6px "Press Start 2P",monospace;color:#bde5ff}
+.treasure-chest.treasure-win{background:#31584f;border-color:#bde5ff}.treasure-chest.treasure-empty{opacity:.5}
+@media(max-width:520px){.game-stage{min-height:195px;padding:10px 6px}.mini-score{font-size:7px}.memory-tile{height:54px}.spell-input{font-size:9px}.sequence-lights button{height:50px;font-size:16px}.treasure-chest{min-height:78px;font-size:24px}}
+
+
+
+/* NEW HARDER PIXEL QUESTS */
+.vault-slots,.vault-runes{display:flex;justify-content:center;gap:8px;margin:12px auto;flex-wrap:wrap}
+.vault-slot,.vault-runes button{width:48px;height:48px;border:3px solid #bde5ff;background:#33284f;color:#fff;font:18px 'Press Start 2P',monospace;box-shadow:3px 3px #100e25;cursor:pointer}
+.vault-slot{border-color:#ffe4a8;background:#49335c}.vault-runes button:nth-child(2){border-color:#ffb9d5}.vault-runes button:nth-child(3){border-color:#ffe4a8}.vault-runes button:nth-child(4){border-color:#dfd0ff}
+.vault-history{max-height:54px;overflow:auto;margin:5px auto;font:12px 'VT323',monospace;color:#bde5ff}.vault-history-line{padding:2px}
+.dodge-hud{display:flex;justify-content:space-between;max-width:310px;margin:6px auto;color:#ffe4a8;font:7px 'Press Start 2P',monospace}
+.dodge-board{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;width:min(290px,90%);margin:10px auto;padding:7px;border:3px solid #bde5ff;background:#17162e;box-shadow:4px 4px #100e25}
+.dodge-cell{height:31px;display:grid;place-items:center;background:#393052;border:1px solid #71618a;font-size:19px;image-rendering:pixelated}
+.dodge-cell:nth-child(5n+1),.dodge-cell:nth-child(5n+5){background:#302849}
+.dodge-heart{display:inline-block;color:#ff6f9e;font:12px 'Press Start 2P',monospace;text-shadow:2px 2px #6d244e;margin-right:3px}.dodge-heart.lost{color:#62546f;text-shadow:none}
+.dodge-cell.danger{background:#70405e;box-shadow:inset 0 0 0 2px #ff9bbd}
+.dodge-controls{display:flex;justify-content:center;gap:12px;margin:9px auto}
+.dodge-controls button{padding:10px 12px;border:3px solid #ffb9d5;background:#49335c;color:white;font:7px 'Press Start 2P',monospace;box-shadow:3px 3px #100e25;cursor:pointer}
+@media(max-width:520px){.vault-slot,.vault-runes button{width:42px;height:42px;font-size:15px}.dodge-cell{height:27px}}
+
+/* PIXEL FEEDBACK POPUP + QUEST CONFETTI */
+.pixel-feedback{position:fixed;inset:0;z-index:10050;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(10,8,25,.62);image-rendering:pixelated}
+.pixel-feedback.show{display:flex;animation:feedbackFade .16s steps(3) both}
+.pixel-feedback-card{width:min(340px,92vw);padding:23px 18px 18px;text-align:center;background:#211b3e;border:4px solid #ffb9d5;box-shadow:inset 0 0 0 4px #59416e,7px 7px 0 #0b0918;color:#fff;animation:feedbackPop .22s steps(4) both}
+.pixel-feedback-card.error{border-color:#ff8eaa}.pixel-feedback-card.success{border-color:#ffe4a8}
+.pixel-feedback-icon{font:30px/1.4 "Press Start 2P",monospace;color:#ffb9d5;text-shadow:3px 3px #684477;margin-bottom:12px}
+.pixel-feedback-title{font:10px/1.8 "Press Start 2P",monospace;color:#ffe4a8;margin:0 0 9px}
+.pixel-feedback-copy{font:22px/1.2 "VT323",monospace;color:#f7eafa;margin:0 0 15px}
+.pixel-feedback-btn{padding:10px 13px;border:3px solid #bde5ff;background:#45315f;color:white;font:8px "Press Start 2P",monospace;box-shadow:3px 3px #100e25;cursor:pointer}
+.pixel-confetti{position:fixed;z-index:10040;top:-18px;width:9px;height:9px;pointer-events:none;image-rendering:pixelated;box-shadow:2px 2px 0 rgba(0,0,0,.2);animation:pixelConfettiFall var(--fall) steps(12) forwards;transform:rotate(var(--turn))}
+@keyframes pixelConfettiFall{to{transform:translate3d(var(--drift),110vh,0) rotate(var(--spin));opacity:.9}}
+@keyframes feedbackPop{0%{transform:scale(.7) translateY(12px);opacity:0}100%{transform:scale(1);opacity:1}}
+@keyframes feedbackFade{from{opacity:0}to{opacity:1}}
+
+</style>
+</head>
+
+<body>
+
+<div id="gameIntro">
+  <div class="intro-scan"></div>
+  <div class="intro-content">
+    <div class="intro-pixel-heart">♥</div>
+    <p class="intro-label">A SPECIAL GAME FOR</p>
+    <h1>PLAYER <span>JO</span></h1>
+    <div class="intro-line"></div>
+    <p class="intro-subtitle">THREE MONTHS OF US</p>
+
+    <div class="intro-console">
+      <span>♡ PLAYER 1: JO</span>
+      <span>✦ LOVE LEVEL: MAX</span>
+      <span>♡ STATUS: DEEPLY LOVED</span>
+    </div>
+
+    <button class="start-game" onclick="enterGame()">
+      ▶ PRESS START
+    </button>
+    <p class="intro-footer">A LITTLE GAME. A LOT OF LOVE.</p>
+  </div>
+</div>
+
+<div id="sky" aria-hidden="true"></div>
+
+<div id="levelGate" role="dialog" aria-modal="true" aria-label="Mini game before opening the page">
+  <div class="gate-card">
+    <div class="gate-kicker" id="gateLevel">LEVEL 01 · PIXEL QUEST</div>
+    <h2 id="gateTitle">COLLECT THE HEARTS!</h2>
+    <div class="gate-party" aria-hidden="true">
+      <span class="gate-character gate-princess"><svg viewBox="0 0 32 40" shape-rendering="crispEdges"><rect x="7" y="1" width="5" height="5" fill="#ffe68e"/><rect x="20" y="1" width="5" height="5" fill="#ffe68e"/><rect x="5" y="6" width="22" height="4" fill="#ffd86f"/><rect x="7" y="10" width="18" height="8" fill="#a85c8c"/><rect x="9" y="15" width="14" height="10" fill="#ffd8c5"/><rect x="11" y="18" width="2" height="3" fill="#55334b"/><rect x="19" y="18" width="2" height="3" fill="#55334b"/><rect x="8" y="25" width="16" height="8" fill="#ff8fca"/><rect x="4" y="32" width="24" height="5" fill="#d96eae"/><rect x="10" y="37" width="5" height="3" fill="#6f4a8d"/><rect x="18" y="37" width="5" height="3" fill="#6f4a8d"/></svg></span>
+      <span class="gate-character"><svg viewBox="0 0 32 36" shape-rendering="crispEdges"><rect x="5" y="2" width="7" height="8" fill="#ffc2df"/><rect x="20" y="2" width="7" height="8" fill="#ffc2df"/><rect x="8" y="8" width="16" height="4" fill="#f5a4ce"/><rect x="4" y="12" width="24" height="17" fill="#f5a4ce"/><rect x="8" y="17" width="4" height="4" fill="#49364f"/><rect x="20" y="17" width="4" height="4" fill="#49364f"/><rect x="14" y="22" width="4" height="3" fill="#fff4e8"/><rect x="1" y="27" width="5" height="5" fill="#f5a4ce"/><rect x="26" y="27" width="5" height="5" fill="#f5a4ce"/></svg></span>
+      <span class="gate-character"><svg viewBox="0 0 32 36" shape-rendering="crispEdges"><rect x="7" y="2" width="18" height="5" fill="#d9c4ff"/><rect x="4" y="7" width="24" height="15" fill="#8e83bd"/><rect x="8" y="11" width="16" height="8" fill="#ffe0c8"/><rect x="10" y="13" width="3" height="3" fill="#49364f"/><rect x="19" y="13" width="3" height="3" fill="#49364f"/><rect x="9" y="22" width="14" height="8" fill="#70bce8"/><rect x="5" y="29" width="8" height="5" fill="#ffe09b"/><rect x="19" y="29" width="8" height="5" fill="#ffe09b"/></svg></span>
+    </div>
+    <p class="gate-instructions" id="gateInstruction">Help the princess and her friends collect 3 magic hearts to unlock this page.</p>
+    <div class="game-stage" id="gameStage" aria-live="polite"></div>
+    <div class="gate-status" id="gateStatus">HEARTS FOUND: 0 / 3</div>
+    <div class="gate-progress"><i id="gateProgress"></i></div>
+    <button class="btn primary gate-start" id="gateStart" onclick="unlockLevel()">UNLOCK PAGE ▶</button>
+  </div>
+</div>
+<div class="pixel-feedback" id="pixelFeedback" role="alertdialog" aria-modal="true" aria-labelledby="pixelFeedbackTitle">
+  <div class="pixel-feedback-card error" id="pixelFeedbackCard">
+    <div class="pixel-feedback-icon" id="pixelFeedbackIcon">!</div>
+    <h3 class="pixel-feedback-title" id="pixelFeedbackTitle">NOT QUITE!</h3>
+    <p class="pixel-feedback-copy" id="pixelFeedbackCopy">Try again, player!</p>
+    <button class="pixel-feedback-btn" onclick="closePixelFeedback()">OKAY ▶</button>
+  </div>
+</div>
+
+<main class="wrap">
+<header class="top">
+  <span>AN ONLINE KEEPSAKE</span>
+  <span class="brand">for Jo ♡</span>
+  <span>23 · 12 · 26</span>
+</header>
+
+<section class="page active" id="p1">
+<div class="panel opening-panel">
+  <div class="level-hud" aria-label="LEVEL 01: THE BEGINNING">
+    <div class="level-top"><span>LEVEL 01</span><span>THE BEGINNING</span><span>♡  ♥  ♡</span></div>
+    <div class="level-track"><i style="--progress:16.666666666666664%"></i></div>
+  </div>
+  <div class="seal">♡</div>
+  <p class="eyebrow">A little celebration of us · 23 December 2026</p>
+  <h1>Three Months,<br><em>Still You.</em></h1>
+  <div class="rule"></div>
+  <p class="script">For Jo, with all my love.</p>
+  <p class="lead">Three months of learning, laughing, choosing, and finding new reasons to be grateful that this is our story.</p>
+  <div class="date">23 · 09 · 26 — 23 · 12 · 26</div>
+  <div class="actions">
+    <button class="btn primary" onclick="go(2)">Open our story →</button>
+  </div>
+  <div class="counter">01 / 06</div>
+</div>
+</section>
+
+<section class="page" id="p2">
+<div class="panel">
+  <div class="level-hud" aria-label="LEVEL 02: MEMORY QUEST">
+    <div class="level-top"><span>LEVEL 02</span><span>MEMORY QUEST</span><span>♡  ♥  ♡</span></div>
+    <div class="level-track"><i style="--progress:33.33333333333333%"></i></div>
+  </div>
+  <p class="eyebrow">02 · the things i keep</p>
+  <h2>Moments that<br><em>stay with me.</em></h2>
+  <p class="lead">Some memories don't need a photograph. Sometimes, all it takes is remembering how a moment made you feel.</p>
+  <div class="promises">
+    <div class="promise"><b>01 / The check-ins</b><br>Those small messages that quietly say, “I'm here. I'm thinking of you.”</div>
+    <div class="promise"><b>02 / The calls</b><br>Hearing your voice and letting the rest of the day slow down for a while.</div>
+    <div class="promise"><b>03 / The care</b><br>The reminders, the concern, and the way we try to look after each other.</div>
+    <div class="promise"><b>04 / The choosing</b><br>Finding our way back to understanding, even after a difficult conversation.</div>
+  </div>
+  <div class="actions">
+    <button class="btn" onclick="go(1)">Back</button>
+    <button class="btn primary" onclick="go(3)">A letter for you →</button>
+  </div>
+  <div class="counter">02 / 06</div>
+</div>
+</section>
+
+<section class="page" id="p3">
+<div class="panel">
+  <div class="level-hud" aria-label="LEVEL 03: LOVE LETTER">
+    <div class="level-top"><span>LEVEL 03</span><span>LOVE LETTER</span><span>♡  ♥  ♡</span></div>
+    <div class="level-track"><i style="--progress:50.0%"></i></div>
+  </div>
+  <p class="eyebrow">03 · written from my side of the world</p>
+  <h2>Dear Jo,</h2>
+  <div class="note">
+    <p>Three months. It may sound like a small number to everyone else, but to me, it holds so many conversations, adjustments, laughs, and moments that have slowly become part of my everyday life.</p>
+    <p>I love that I get to know you in the details — the stories you tell, the thoughts that cross your mind, the things that make you happy, and even the days when you don't feel like yourself. I don't expect us to agree on everything. I just hope we keep choosing patience, honesty, and the willingness to understand each other.</p>
+    <p>Distance is part of our story right now, but it doesn't make what we share any less meaningful. I want to keep showing up for you in the ways I can, and keep making something good with you, one day at a time.</p>
+    <p class="script">Always choosing you, ♡</p>
+  </div>
+  <div class="actions">
+    <button class="btn" onclick="go(2)">Back</button>
+    <button class="btn primary" onclick="go(4)">One thing I promise →</button>
+  </div>
+  <div class="counter">03 / 06</div>
+</div>
+</section>
+
+<section class="page" id="p4">
+<div class="panel">
+  <div class="level-hud" aria-label="LEVEL 04: PROMISE MODE">
+    <div class="level-top"><span>LEVEL 04</span><span>PROMISE MODE</span><span>♡  ♥  ♡</span></div>
+    <div class="level-track"><i style="--progress:66.66666666666666%"></i></div>
+  </div>
+  <p class="eyebrow">04 · not perfect, but intentional</p>
+  <h2>What I want<br><em>to keep giving.</em></h2>
+  <p class="lead">Not grand promises. Just the kind of love that is built through the ordinary choices.</p>
+  <div class="promises">
+    <div class="promise">I want to <b>listen</b>, not just wait for my turn to speak.</div>
+    <div class="promise">I want to <b>communicate</b>, especially when something feels difficult.</div>
+    <div class="promise">I want to <b>celebrate you</b> on the loud days and be gentle with you on the quiet ones.</div>
+    <div class="promise">I want us to keep making space for <b>both of us</b> to grow.</div>
+  </div>
+  <div class="actions">
+    <button class="btn" onclick="go(3)">Back</button>
+    <button class="btn primary" onclick="go(5)">There's a gift →</button>
+  </div>
+  <div class="counter">04 / 06</div>
+</div>
+</section>
+
+<section class="page" id="p5">
+<div class="panel">
+  <div class="level-hud" aria-label="LEVEL 05: FAVORITE PERSON">
+    <div class="level-top"><span>LEVEL 05</span><span>FAVORITE PERSON</span><span>♡  ♥  ♡</span></div>
+    <div class="level-track"><i style="--progress:83.33333333333334%"></i></div>
+  </div>
+  <p class="eyebrow">05 · a very serious investigation</p>
+  <h2>Reasons You're<br><em>My Favorite Person.</em></h2>
+  <p class="lead">After three months of research, observation, and absolutely no unbiased opinions, the results are in.</p>
+  <div class="grid">
+    <article class="tile">
+      <span class="symbol">✧</span>
+      <h3>Certified yapper</h3>
+      <p>Somehow, even the random stories become my favorite part of the day. Please submit more episodes.</p>
+    </article>
+    <article class="tile">
+      <span class="symbol">♡</span>
+      <h3>Professional heart-stealer</h3>
+      <p>No warning, no refund policy, and apparently I agreed to these terms willingly.</p>
+    </article>
+    <article class="tile">
+      <span class="symbol">☾</span>
+      <h3>CEO of my attention</h3>
+      <p>One notification from you and suddenly every other task becomes less important.</p>
+    </article>
+    <article class="tile">
+      <span class="symbol">✦</span>
+      <h3>My favorite plot twist</h3>
+      <p>Didn't see you coming, but now I wouldn't change this part of the story.</p>
+    </article>
+  </div>
+  <p class="script">Final verdict: ridiculously lovable. Case closed. ♡</p>
+  <div class="actions">
+    <button class="btn" onclick="go(4)">Back</button>
+    <button class="btn primary" onclick="go(6)">A surprise for you →</button>
+  </div>
+  <div class="counter">05 / 06</div>
+</div>
+</section>
+
+<section class="page" id="p6">
+<div class="panel">
+  <div class="level-hud" aria-label="FINAL LEVEL: THE GIFT">
+    <div class="level-top"><span>FINAL LEVEL</span><span>THE GIFT</span><span>♡  ♥  ♡</span></div>
+    <div class="level-track"><i style="--progress:100.0%"></i></div>
+  </div>
+  <p class="eyebrow">06 · something i made for you</p>
+  <h2>A little surprise<br><em>with your name on it.</em></h2>
+  <p class="lead">Tap the present. I made this part just for you.</p>
+
+  <div class="gift-area" id="gift" onclick="openGift()">
+    <div class="gift-confetti" aria-hidden="true"></div>
+
+    <div class="teddy" aria-hidden="true">
+      <span class="ear left"></span><span class="ear right"></span>
+      <span class="head">
+        <i class="eye left"></i><i class="eye right"></i>
+        <i class="muzzle"></i><i class="nose"></i><i class="smile"></i>
+      </span>
+      <span class="arm left"></span><span class="arm right"></span>
+      <span class="body"><i class="belly"></i></span>
+      <span class="leg left"></span><span class="leg right"></span>
+      <span class="heart">♥</span>
+      <span class="teddy-bouquet" aria-hidden="true">
+        <i class="stem"></i><i class="leaf"></i><i class="leaf second"></i>
+        <i class="flower f1"></i><i class="flower f2"></i><i class="flower f3"></i>
+        <i class="flower f4"></i><i class="flower f5"></i><i class="flower f6"></i>
+        <i class="flower f7"></i><i class="flower f8"></i><i class="flower f9"></i>
+        <i class="wrap"></i><i class="bow"></i>
+      </span>
+    </div>
+
+    <div class="lid"><span class="lid-ribbon"></span></div>
+    <div class="box">
+      <span class="box-ribbon"></span>
+      <i class="box-corner tl"></i><i class="box-corner tr"></i>
+      <i class="box-corner bl"></i><i class="box-corner br"></i>
+    </div>
+  </div>
+
+  <div class="hidden-note" id="giftNote">
+    If I could wrap up all the affection I have for you, it would still need a bigger box. So here's a tiny handmade reminder instead: you are loved, Jo. ♡
+  </div>
+
+  <div class="closing-note">
+    <div class="rule"></div>
+    <p class="final-quote">“I don't need every day to be perfect. I just want us to keep making the days worth remembering.”</p>
+    <p class="lead">Thank you for being here, for letting me know you, and for making this chapter something I look forward to continuing.</p>
+    <p class="script">Three months down. More memories to make, more reasons to keep choosing each other.</p>
+    <p class="date">Happy 3rd Monthsary, Jo. · I love you, always. ♡</p>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="go(5)">Back</button>
+    <button class="btn primary" onclick="go(1)">Read it again ↺</button>
+  </div>
+  <div class="counter">06 / 06</div>
+</div>
+</section>
+</main>
+
+
+<!-- PIXEL GAME CONTROLLER -->
+<div class="pixel-controller" aria-label="Page controller">
+  <span class="controller-label">PLAYER 1</span>
+  <div class="controller-body">
+    <button class="ctrl-btn ctrl-prev" onclick="go(current-1)" aria-label="Previous page">◀</button>
+    <span class="dpad" aria-hidden="true"><i></i></span>
+    <button class="ctrl-btn ctrl-heart" onclick="princessCheer()" aria-label="Send a heart">♥</button>
+    <button class="ctrl-btn ctrl-next" onclick="go(current+1)" aria-label="Next page">▶</button>
+  </div>
+</div>
+
+<!-- PIXEL PRINCESS COMPANION -->
+<div class="pixel-princess" id="pixelPrincess" aria-hidden="true">
+  <svg viewBox="0 0 64 88" role="img" shape-rendering="crispEdges">
+    <!-- crown -->
+    <rect x="23" y="2" width="6" height="6" fill="#ffe68e"/>
+    <rect x="35" y="2" width="6" height="6" fill="#ffe68e"/>
+    <rect x="17" y="8" width="30" height="6" fill="#ffd86f"/>
+    <rect x="23" y="8" width="6" height="4" fill="#fff4c5"/>
+    <rect x="35" y="8" width="6" height="4" fill="#fff4c5"/>
+    <!-- hair -->
+    <rect x="17" y="14" width="30" height="8" fill="#8a4778"/>
+    <rect x="11" y="20" width="42" height="25" fill="#a85c8c"/>
+    <rect x="8" y="28" width="8" height="25" fill="#8a4778"/>
+    <rect x="48" y="28" width="8" height="25" fill="#8a4778"/>
+    <rect x="14" y="44" width="8" height="14" fill="#8a4778"/>
+    <rect x="42" y="44" width="8" height="14" fill="#8a4778"/>
+    <!-- face -->
+    <rect x="19" y="20" width="26" height="25" fill="#ffd8c5"/>
+    <rect x="22" y="30" width="4" height="5" fill="#55334b"/>
+    <rect x="38" y="30" width="4" height="5" fill="#55334b"/>
+    <rect x="28" y="38" width="8" height="3" fill="#d86d91"/>
+    <rect x="16" y="22" width="5" height="17" fill="#a85c8c"/>
+    <rect x="43" y="22" width="5" height="17" fill="#a85c8c"/>
+    <!-- dress -->
+    <rect x="23" y="46" width="18" height="8" fill="#8bdcff"/>
+    <rect x="17" y="54" width="30" height="7" fill="#ff8fca"/>
+    <rect x="12" y="61" width="40" height="8" fill="#ff8fca"/>
+    <rect x="8" y="69" width="48" height="7" fill="#d96eae"/>
+    <rect x="23" y="54" width="18" height="5" fill="#fff0fa"/>
+    <rect x="29" y="55" width="6" height="6" fill="#ffe68e"/>
+    <!-- shoes -->
+    <rect x="16" y="77" width="13" height="6" fill="#6f4a8d"/>
+    <rect x="36" y="77" width="13" height="6" fill="#6f4a8d"/>
+    <!-- wand -->
+    <rect x="53" y="38" width="3" height="20" fill="#ffe68e"/>
+    <rect x="50" y="32" width="9" height="3" fill="#ffe68e"/>
+    <rect x="53" y="29" width="3" height="9" fill="#ffe68e"/>
+  </svg>
+  <span class="princess-spark"></span>
+</div>
+
+<!-- PIXEL PARTY: tiny arcade friends -->
+<div class="pixel-party" aria-hidden="true">
+  <div class="pixel-mascot" title="Pixel slime">
+    <svg viewBox="0 0 32 36"><rect x="9" y="3" width="14" height="5" fill="#a8f4dc"/><rect x="5" y="8" width="22" height="5" fill="#78d9bd"/><rect x="2" y="13" width="28" height="15" fill="#65cba9"/><rect x="6" y="28" width="20" height="4" fill="#65cba9"/><rect x="9" y="17" width="4" height="5" fill="#26334a"/><rect x="20" y="17" width="4" height="5" fill="#26334a"/><rect x="13" y="25" width="6" height="2" fill="#fff1f7"/><rect x="4" y="12" width="4" height="4" fill="#b8ffe8"/></svg>
+  </div>
+  <div class="pixel-mascot" title="Pixel kitty">
+    <svg viewBox="0 0 32 36"><rect x="5" y="2" width="7" height="8" fill="#ffc2df"/><rect x="20" y="2" width="7" height="8" fill="#ffc2df"/><rect x="8" y="8" width="16" height="4" fill="#f5a4ce"/><rect x="4" y="12" width="24" height="17" fill="#f5a4ce"/><rect x="8" y="17" width="4" height="4" fill="#49364f"/><rect x="20" y="17" width="4" height="4" fill="#49364f"/><rect x="14" y="22" width="4" height="3" fill="#fff4e8"/><rect x="1" y="27" width="5" height="5" fill="#f5a4ce"/><rect x="26" y="27" width="5" height="5" fill="#f5a4ce"/><rect x="13" y="10" width="6" height="3" fill="#ffe09b"/></svg>
+  </div>
+  <div class="pixel-mascot" title="Pixel knight">
+    <svg viewBox="0 0 32 36"><rect x="7" y="2" width="18" height="5" fill="#d9c4ff"/><rect x="4" y="7" width="24" height="15" fill="#8e83bd"/><rect x="8" y="11" width="16" height="8" fill="#ffe0c8"/><rect x="10" y="13" width="3" height="3" fill="#49364f"/><rect x="19" y="13" width="3" height="3" fill="#49364f"/><rect x="9" y="22" width="14" height="8" fill="#70bce8"/><rect x="5" y="29" width="8" height="5" fill="#ffe09b"/><rect x="19" y="29" width="8" height="5" fill="#ffe09b"/><rect x="1" y="14" width="4" height="12" fill="#ffb9d5"/><rect x="27" y="14" width="4" height="12" fill="#ffb9d5"/></svg>
+  </div>
+</div>
+
+<div class="music">
+  <button id="play" aria-label="Play music" onclick="toggleMusic()">▶</button>
+  <div class="track">A song for this chapter
+    <small id="status">add your instrumental mp3 link</small>
+  </div>
+  <span style="color:#a9dfff">♫</span>
+</div>
+
+<audio id="audio" loop preload="none"></audio>
+
+<script>
+
+function enterGame(){
+  const intro=document.getElementById('gameIntro');
+  intro.classList.add('hide');
+  setTimeout(()=>{
+    intro.style.display='none';
+    window.scrollTo({top:0,behavior:'smooth'});
+    launchLevel(1);
+  },950);
+}
+
+
+function princessCheer(){
+  const p=document.getElementById('pixelPrincess');
+  p.classList.remove('cheer');
+  void p.offsetWidth;
+  p.classList.add('cheer');
+  setTimeout(()=>p.classList.remove('cheer'),700);
+}
+
+const sky=document.getElementById('sky');
+
+for(let i=0;i<45;i++){
+  const s=document.createElement('span');
+  s.className='star';
+  s.innerHTML=pixelSprite(['star','heart','diamond'][i%3]);
+  s.style.left=Math.random()*100+'%';
+  s.style.top=Math.random()*100+'%';
+  s.style.width=(9+Math.random()*5)+'px';
+  s.style.height=s.style.width;
+  s.style.animationDelay=(Math.random()*4)+'s';
+  sky.appendChild(s);
+}
+
+for(let i=0;i<30;i++){
+  const p=document.createElement('span');
+  p.className='petal';
+  p.style.left=Math.random()*100+'%';
+  p.style.animationDuration=(11+Math.random()*15)+'s';
+  p.style.animationDelay=(-Math.random()*22)+'s';
+  p.style.setProperty('--drift',(Math.random()*180-90)+'px');
+  p.style.opacity=(.25+Math.random()*.55);
+  p.style.width=(7+Math.random()*7)+'px';
+  p.style.height=(7+Math.random()*7)+'px';
+  sky.appendChild(p);
+}
+
+let current=1;
+let pendingLevel=1;
+let heartsFound=0;
+let gameState={};
+const levelNames=['THE BEGINNING','MEMORY QUEST','LOVE LETTER','PROMISE MODE','FAVORITE PERSON','THE GIFT'];
+const gameNames=[
+  'PIXEL VAULT CRACKER',
+  'PIXEL MEMORY MATCH',
+  'MESSAGE SPELL',
+  'PROMISE SEQUENCE',
+  'PIXEL METEOR DODGE',
+  'TREASURE CHEST'
+];
+const gameInstructions=[
+  'Crack the royal vault! Set the four runes in the right order. You have six attempts.',
+  'Flip the tiles and match all 3 pairs.',
+  'Type the secret message to power up the letter.',
+  'Watch the symbols, then repeat the 5-step promise code.',
+  'Dodge 10 falling glitches across five lanes. You only get 3 hits, so keep moving!',
+  'Choose the one treasure chest hiding the final surprise.'
+];
+function stage(){return document.getElementById('gameStage')}
+function setProgress(done,total,label){
+  const pct=Math.min(100,Math.round(done/total*100));
+  document.getElementById('gateStatus').textContent=label;
+  document.getElementById('gateProgress').style.width=pct+'%';
+}
+let feedbackTimer=null;
+function pixelMessage(type,title,message){
+  const wrap=document.getElementById('pixelFeedback');
+  const card=document.getElementById('pixelFeedbackCard');
+  card.className='pixel-feedback-card '+(type==='success'?'success':'error');
+  document.getElementById('pixelFeedbackIcon').innerHTML=type==='success'?pixelSprite('star'):'!';
+  document.getElementById('pixelFeedbackTitle').textContent=title;
+  document.getElementById('pixelFeedbackCopy').textContent=message;
+  wrap.classList.add('show');
+  if(feedbackTimer)clearTimeout(feedbackTimer);
+  if(type==='error')feedbackTimer=setTimeout(closePixelFeedback,1700);
+}
+function closePixelFeedback(){
+  const wrap=document.getElementById('pixelFeedback');
+  if(wrap)wrap.classList.remove('show');
+  if(feedbackTimer)clearTimeout(feedbackTimer);
+}
+function pixelConfetti(){
+  const colors=['#ffb9d5','#bde5ff','#ffe4a8','#dfd0ff','#ffd5bd','#ffffff'];
+  for(let i=0;i<76;i++){
+    const bit=document.createElement('i');bit.className='pixel-confetti';
+    bit.style.left=(Math.random()*100)+'vw';bit.style.background=colors[i%colors.length];
+    bit.style.setProperty('--fall',(2.1+Math.random()*2.1)+'s');
+    bit.style.setProperty('--drift',(Math.random()*240-120)+'px');
+    bit.style.setProperty('--turn',(Math.random()*90)+'deg');
+    bit.style.setProperty('--spin',(Math.random()*900-450)+'deg');
+    bit.style.animationDelay=(Math.random()*.45)+'s';
+    document.body.appendChild(bit);setTimeout(()=>bit.remove(),5000);
+  }
+}
+function gameComplete(message){
+  gameState.done=true;
+  document.getElementById('gateTitle').textContent='QUEST COMPLETE!';
+  document.getElementById('gateInstruction').textContent=message;
+  document.getElementById('gateStart').classList.add('ready');
+  document.getElementById('gateStart').textContent='OPEN PAGE ▶';
+  princessCheer();
+  pixelConfetti();
+  pixelMessage('success','QUEST CLEARED!',message);
+}
+function launchLevel(n){
+  if(n<1||n>6)return;
+  pendingLevel=n;gameState={done:false,step:0};
+  document.getElementById('gateLevel').textContent=`LEVEL 0${n} · ${gameNames[n-1]}`;
+  document.getElementById('gateTitle').textContent=levelNames[n-1];
+  document.getElementById('gateInstruction').textContent=gameInstructions[n-1];
+  document.getElementById('gateStart').classList.remove('ready');
+  document.getElementById('gateStart').textContent='FINISH THE QUEST FIRST';
+  setProgress(0,[6,3,1,5,10,1][n-1],['ATTEMPTS: 0 / 6','MATCHES: 0 / 3','MESSAGE: 0%','CODE: 0 / 5','GLITCHES DODGED: 0 / 10','TREASURE: NOT FOUND'][n-1]);
+  document.getElementById('levelGate').classList.add('show');
+  renderMiniGame(n);
+}
+function pixelSprite(kind){
+  const art={
+    heart:['.rr..rr.','rrrrrrrr','rrrrrrrr','.rrrrrr.','..rrrr..','...rr...','....r...'],
+    star:['...y...','...y...','..yyy..','yyyyyyy','.yyyyy.','..y.y..','.y...y.'],
+    diamond:['...c...','..ccc..','.ccccc.','ccccccc','.ccccc.','..ccc..','...c...'],
+    crown:['y...y...y','yy..y..yy','yyyyyyyyy','y.y.y.y.y','yyyyyyyyy','.........'],
+    cat:['.k....k.','kkk..kkk','kkkkkkkk','kpk..kpk','kkkkkkkk','.k.kk.k.','..kkkk..','...kk...'],
+    flower:['...p...','..ppp..','.ppppp.','..ppp..','...g...','..ggg..','...g...'],
+    meteor:['....o...','...ooo..','..ooooo.','.oooooo.','..oooo..','...oo...','....b...'],
+    shield:['..bbbb..','.bbbbbb.','bbbbbbbb','bbbbbbbb','.bbbbbb.','..bbbb..','...bb...'],
+    chest:['.yyyyyy.','yyyyyyyy','yy....yy','yyyyyyyy','yybbbb yy'.replaceAll(' ',''),'yyyyyyyy','.yyyyyy.']
+  };
+  const colors={r:'#ff6f9e',y:'#ffe18a',c:'#8be0ff',p:'#ff9ed0',g:'#83d9a5',o:'#ff9d58',b:'#8bc7ff',k:'#28213f'};
+  const rows=art[kind]||art.star;let rects='';
+  rows.forEach((row,y)=>[...row].forEach((ch,x)=>{if(ch!=='.')rects+=`<rect x="${x+1}" y="${y+1}" width="1" height="1" fill="${colors[ch]||'#fff'}"/>`}));
+  return `<svg class="pixel-sprite" viewBox="0 0 10 10" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect x="0" y="0" width="10" height="10" fill="none"/>${rects}</svg>`;
+}
+function renderMiniGame(n){
+  const s=stage();
+  if(n===1){
+    gameState.step=0;gameState.attempts=0;gameState.vaultCode=[0,1,2,3].sort(()=>Math.random()-.5);gameState.guess=[-1,-1,-1,-1];
+    s.innerHTML=`<div class="mini-score">CRACK THE ROYAL VAULT!</div><div class="mini-hint">Set all 4 runes, then press UNLOCK. Gold means right rune AND right place.</div><div class="vault-slots" id="vaultSlots"></div><div class="vault-runes" id="vaultRunes"><button onclick="pickRune(0)" aria-label="Heart rune">${pixelSprite('heart')}</button><button onclick="pickRune(1)" aria-label="Star rune">${pixelSprite('star')}</button><button onclick="pickRune(2)" aria-label="Crown rune">${pixelSprite('crown')}</button><button onclick="pickRune(3)" aria-label="Diamond rune">${pixelSprite('diamond')}</button></div><button class="mini-action" onclick="submitVault()">UNLOCK VAULT ▶</button><div class="mini-hint" id="vaultHint">6 ATTEMPTS · NO REPEATS</div><div class="vault-history" id="vaultHistory"></div>`;
+    drawVault();
+  }else if(n===2){
+    gameState.step=0;gameState.flipped=[];gameState.matched=[];
+    const vals=['crown','cat','flower','crown','cat','flower'].sort(()=>Math.random()-.5);
+    s.innerHTML='<div class="mini-score">FIND THE THREE MATCHING PAIRS</div><div class="memory-grid" id="memoryGrid"></div>';
+    vals.forEach((v,i)=>{
+      const b=document.createElement('button');b.className='memory-tile';b.textContent='?';b.dataset.value=v;b.dataset.index=i;
+      b.onclick=()=>flipMemory(b);document.getElementById('memoryGrid').appendChild(b);
+    });
+  }else if(n===3){
+    s.innerHTML=`<div class="mini-score">UNLOCK THE LOVE LETTER</div><div class="spell-lock">${pixelSprite('heart')} ${pixelSprite('star')} ${pixelSprite('heart')}</div><input class="spell-input" id="spellInput" maxlength="12" placeholder="TYPE THE SECRET..." autocomplete="off"><button class="mini-action" onclick="checkSpell()">CAST SPELL ▶</button><div class="mini-hint">Hint: 10 letters · NO SPACES</div>`;
+    document.getElementById('spellInput').addEventListener('keydown',e=>{if(e.key==='Enter')checkSpell()});
+  }else if(n===4){
+    gameState.sequence=Array.from({length:5},()=>Math.floor(Math.random()*4));gameState.step=0;
+    s.innerHTML=`<div class="mini-score">REMEMBER THE PROMISE CODE</div><div class="sequence-lights" id="sequenceLights"><button data-v="0" aria-label="Heart">${pixelSprite('heart')}</button><button data-v="1" aria-label="Star">${pixelSprite('star')}</button><button data-v="2" aria-label="Crown">${pixelSprite('crown')}</button><button data-v="3" aria-label="Diamond">${pixelSprite('diamond')}</button></div><button class="mini-action" onclick="showSequence()">SHOW MY CODE</button><div class="mini-hint" id="sequenceHint">Watch the 5-symbol pattern, then repeat it!</div>`;
+    document.querySelectorAll('#sequenceLights button').forEach(b=>b.onclick=()=>tapSequence(+b.dataset.v));
+  }else if(n===5){
+    gameState.step=0;gameState.lives=3;gameState.player=2;gameState.wave=0;gameState.meteorRow=0;gameState.meteorCols=[];gameState.dodgeTimer=null;gameState.dodgeOver=false;
+    s.innerHTML=`<div class="mini-score">DODGE THE PIXEL GLITCHES!</div><div class="dodge-hud"><span id="dodgeLives"><i class="dodge-heart">${pixelSprite('heart')}</i><i class="dodge-heart">${pixelSprite('heart')}</i><i class="dodge-heart">${pixelSprite('heart')}</i></span><span id="dodgeWave">WAVE 1 / 10</span></div><div class="dodge-board" id="dodgeBoard"></div><div class="dodge-controls"><button onclick="moveDodge(-1)">◀ LEFT</button><button onclick="moveDodge(1)">RIGHT ▶</button></div><div class="mini-hint" id="dodgeHint">2 glitches first, then 3 — the final wave is tougher!</div>`;
+    drawDodge();startDodge();
+  }else{
+    const correct=Math.floor(Math.random()*3);gameState.correct=correct;
+    s.innerHTML='<div class="mini-score">ONE CHEST HOLDS YOUR SURPRISE</div><div class="chest-row">'+[0,1,2].map(i=>`<button class="treasure-chest" onclick="openChest(${i})">${pixelSprite('chest')}<small>CHEST 0${i+1}</small></button>`).join('')+'</div><div class="mini-hint">Choose wisely, adventurer!</div>';
+  }
+}
+function drawVault(){
+  const slots=document.getElementById('vaultSlots');if(!slots)return;
+  const kinds=['heart','star','crown','diamond'];slots.innerHTML=gameState.guess.map((v,i)=>`<button class="vault-slot" onclick="clearRune(${i})">${v<0?'_':pixelSprite(kinds[v])}</button>`).join('');
+}
+function pickRune(v){if(gameState.done)return;const i=gameState.guess.indexOf(-1);if(i<0){pixelMessage('error','SLOTS FULL!','Clear a rune first, then choose another.');return;}if(gameState.guess.includes(v)){pixelMessage('error','RUNE ALREADY USED!','Each rune can only be used once.');return;}gameState.guess[i]=v;drawVault();}
+function clearRune(i){if(gameState.done)return;gameState.guess[i]=-1;drawVault();}
+function submitVault(){
+  if(gameState.done)return;
+  if(gameState.guess.includes(-1)){pixelMessage('error','CODE INCOMPLETE!','Fill all four rune slots before unlocking.');return;}
+  gameState.attempts++;const exact=gameState.guess.filter((v,i)=>v===gameState.vaultCode[i]).length;
+  const hint=document.getElementById('vaultHint');hint.textContent=`ATTEMPT ${gameState.attempts} / 6 · ${exact} RUNE(S) IN THE RIGHT PLACE`;
+  const hist=document.getElementById('vaultHistory');const line=document.createElement('div');line.className='vault-history-line';line.textContent=gameState.guess.map(v=>['HEART','STAR','CROWN','DIAMOND'][v]).join(' · ')+'  ·  '+exact+'/4';hist.prepend(line);
+  setProgress(gameState.attempts,6,`ATTEMPTS: ${gameState.attempts} / 6`);
+  if(exact===4){gameComplete('Vault unlocked! You cracked the royal code.');return;}
+  if(gameState.attempts>=6){pixelMessage('error','VAULT LOCKED!','No attempts left. The vault reset—try a fresh code!');setTimeout(()=>launchLevel(1),1100);return;}
+  pixelMessage('error','ACCESS DENIED!','Not quite! The clue tells you how many runes are in the exact right position.');gameState.guess=[-1,-1,-1,-1];drawVault();
+}
+function flipMemory(b){
+  if(gameState.done||b.classList.contains('matched')||b.classList.contains('revealed')||gameState.flipped.length===2)return;
+  b.classList.add('revealed');b.innerHTML=pixelSprite(b.dataset.value);gameState.flipped.push(b);
+  if(gameState.flipped.length===2){
+    const [a,c]=gameState.flipped;
+    if(a.dataset.value===c.dataset.value){
+      a.classList.add('matched');c.classList.add('matched');gameState.step++;
+      setProgress(gameState.step,3,`PAIRS FOUND: ${gameState.step} / 3`);gameState.flipped=[];
+      if(gameState.step===3)gameComplete('Memory unlocked! You found every matching pair.');
+    }else{pixelMessage('error','NO MATCH!','Those pixels do not match. Give it another try!');setTimeout(()=>{a.classList.remove('revealed');c.classList.remove('revealed');a.textContent='?';c.textContent='?';gameState.flipped=[]},650);}
+  }
+}
+function checkSpell(){
+  const v=(document.getElementById('spellInput').value||'').toUpperCase().replace(/[^A-Z]/g,'');
+  if(v==='ILOVEYOUJO'){setProgress(1,1,'MESSAGE ACCEPTED');gameComplete('Correct! A little message, with a whole lot of love.');}
+  else{document.getElementById('gateStatus').textContent='NOT QUITE — TRY AGAIN!';document.getElementById('spellInput').classList.add('wrong');pixelMessage('error','WRONG SPELL!','That is not the secret message. Try again!');setTimeout(()=>document.getElementById('spellInput')?.classList.remove('wrong'),350)}
+}
+function showSequence(){
+  if(gameState.done)return;
+  const hint=document.getElementById('sequenceHint');hint.textContent='WATCH CLOSELY...';
+  const buttons=[...document.querySelectorAll('#sequenceLights button')];
+  buttons.forEach(b=>b.disabled=true);
+  gameState.sequence.forEach((v,i)=>setTimeout(()=>{buttons[v].classList.add('lit');setTimeout(()=>buttons[v].classList.remove('lit'),330);if(i===gameState.sequence.length-1){setTimeout(()=>{buttons.forEach(b=>b.disabled=false);hint.textContent='YOUR TURN! REPEAT ALL 5 SYMBOLS.'},420)}},i*560));
+  gameState.step=0;gameState.playing=true;
+}
+function tapSequence(v){
+  if(!gameState.playing||gameState.done)return;
+  if(v!==gameState.sequence[gameState.step]){gameState.step=0;setProgress(0,5,'WRONG ORDER — TRY THE CODE AGAIN');pixelMessage('error','WRONG ORDER!','Oops! Watch the sequence again and try once more.');return}
+  gameState.step++;setProgress(gameState.step,5,`CODE MATCHED: ${gameState.step} / 5`);
+  if(gameState.step===5){gameState.playing=false;gameComplete('Perfect sequence! You remembered all five symbols.')}
+}
+function drawDodge(){
+  const board=document.getElementById('dodgeBoard');if(!board)return;
+  board.innerHTML='';
+  for(let r=0;r<5;r++)for(let c=0;c<5;c++){
+    const cell=document.createElement('div');cell.className='dodge-cell';
+    if(r===gameState.meteorRow&&gameState.meteorCols.includes(c)){cell.innerHTML=pixelSprite('meteor');cell.classList.add('danger')}
+    if(r===4&&c===gameState.player)cell.innerHTML=pixelSprite('shield');
+    board.appendChild(cell);
+  }
+  const lives=document.getElementById('dodgeLives');
+  if(lives)lives.innerHTML=Array.from({length:3},(_,i)=>`<i class="dodge-heart ${i>=gameState.lives?'lost':''}">${i<gameState.lives?pixelSprite('heart'):pixelSprite('heart')}</i>`).join('');
+  const wave=document.getElementById('dodgeWave');if(wave)wave.textContent=`WAVE ${Math.min(gameState.wave+1,10)} / 10`;
+}
+function moveDodge(dir){if(gameState.done||gameState.dodgeOver||gameState.wave>=10)return;gameState.player=Math.max(0,Math.min(4,gameState.player+dir));drawDodge();}
+function nextMeteorWave(){
+  // Waves alternate between two and three falling glitches; wave 10 sends four.
+  const upcoming=gameState.wave+1;
+  const count=upcoming===10?4:(upcoming%2===1?2:3);
+  const lanes=[0,1,2,3,4];
+  for(let i=lanes.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[lanes[i],lanes[j]]=[lanes[j],lanes[i]];}
+  gameState.meteorCols=lanes.slice(0,count);
+  gameState.meteorRow=0;
+  const hint=document.getElementById('dodgeHint');
+  if(hint)hint.textContent=upcoming===10?'FINAL WAVE! FOUR GLITCHES — MOVE FAST!':`${count} GLITCHES INCOMING! FIND A SAFE LANE!`;
+}
+function startDodge(){
+  if(gameState.dodgeTimer)clearTimeout(gameState.dodgeTimer);
+  nextMeteorWave();drawDodge();
+  const tick=()=>{
+    if(gameState.done||gameState.dodgeOver)return;
+    gameState.meteorRow++;
+    if(gameState.meteorRow>=4){
+      const hit=gameState.meteorCols.includes(gameState.player);
+      if(hit){
+        gameState.lives--;
+        pixelMessage('error','GLITCH HIT!','You lost one heart! Watch the falling lanes and dodge the next wave.');
+      }
+      gameState.wave++;
+      setProgress(gameState.wave,10,`WAVES SURVIVED: ${gameState.wave} / 10`);
+      drawDodge();
+      if(gameState.lives<=0){gameState.dodgeOver=true;pixelMessage('error','GAME OVER!','All three hearts are gone. Try the dodge course again.');setTimeout(()=>launchLevel(5),1450);return;}
+      if(gameState.wave>=10){gameComplete('You survived all ten glitch waves with hearts to spare. Pixel champion!');return;}
+      nextMeteorWave();drawDodge();
+    }else drawDodge();
+    // The falling speed ramps up throughout the course; wave 10 is the fastest.
+    const delay=Math.max(210,500-gameState.wave*27);
+    gameState.dodgeTimer=setTimeout(tick,delay);
+  };
+  gameState.dodgeTimer=setTimeout(tick,500);
+}
+function openChest(i){
+  if(gameState.done)return;
+  const chests=[...document.querySelectorAll('.treasure-chest')];
+  chests.forEach(b=>b.disabled=true);
+  if(i===gameState.correct){chests[i].classList.add('treasure-win');chests[i].innerHTML=pixelSprite('diamond')+'<small>CHEST 0'+(i+1)+'</small>';setProgress(1,1,'TREASURE FOUND!');gameComplete('You found the final treasure. It was you all along, Jo. ♡')}
+  else{chests[i].classList.add('treasure-empty');chests[i].innerHTML=pixelSprite('meteor')+'<small>EMPTY</small>';document.getElementById('gateStatus').textContent='EMPTY CHEST! TRY ANOTHER.';pixelMessage('error','EMPTY CHEST!','No treasure here! Pick another chest, player.');chests.forEach((b,j)=>{if(j!==i)b.disabled=false})}
+}
+
+document.addEventListener('keydown',e=>{if(document.getElementById('levelGate')?.classList.contains('show')&&pendingLevel===5){if(e.key==='ArrowLeft'||e.key.toLowerCase()==='a'){e.preventDefault();moveDodge(-1)}if(e.key==='ArrowRight'||e.key.toLowerCase()==='d'){e.preventDefault();moveDodge(1)}}});
+function unlockLevel(){
+  if(!gameState.done)return;
+  document.getElementById('levelGate').classList.remove('show');
+  if(current!==pendingLevel){
+    if(current===6&&pendingLevel!==6)document.getElementById('gift').classList.remove('confetti-active');
+    document.getElementById('p'+current).classList.remove('active');
+    current=pendingLevel;
+    document.getElementById('p'+current).classList.add('active');
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function go(n){
+  if(n<1||n>6||n===current)return;
+  launchLevel(n);
+}
+
+function openGift(){
+  const g=document.getElementById('gift');
+  if(g.classList.contains('open'))return;
+
+  g.classList.add('open','confetti-active');
+  document.getElementById('giftNote').classList.add('show');
+
+  const confetti=g.querySelector('.gift-confetti');
+  const confettiColors=[
+    'var(--pink)','var(--blue)','var(--gold)',
+    'var(--cream)','var(--lilac)'
+  ];
+
+  for(let i=0;i<42;i++){
+    const bit=document.createElement('i');
+    bit.style.setProperty('--confetti',confettiColors[i%confettiColors.length]);
+    bit.style.setProperty('--x',`${(Math.random()-.5)*290}px`);
+    bit.style.setProperty('--y',`${-45-Math.random()*190}px`);
+    bit.style.setProperty('--spin',`${Math.random()*540-270}deg`);
+    bit.style.setProperty('--delay',`${Math.random()*2.8}s`);
+    bit.style.width=`${8+Math.random()*4}px`;
+    bit.style.height=`${8+Math.random()*4}px`;
+
+    if(i%6===0){
+      bit.style.borderRadius='0';
+    }
+    confetti.appendChild(bit);
+  }
+}
+
+const audio=document.getElementById('audio');
+const play=document.getElementById('play');
+const status=document.getElementById('status');
+
+// Paste a direct MP3 URL into the src below when you choose the soundtrack.
+audio.src='';
+
+async function toggleMusic(){
+  if(!audio.src||audio.src===location.href){
+    status.textContent='add your instrumental mp3 link in the HTML';
+    return;
+  }
+
+  if(audio.paused){
+    try{
+      await audio.play();
+      play.textContent='Ⅱ';
+      status.textContent='playing for you ♡';
+    }catch(e){
+      status.textContent='tap again to play';
+    }
+  }else{
+    audio.pause();
+    play.textContent='▶';
+    status.textContent='paused';
+  }
+}
+</script>
+</body>
+</html>
