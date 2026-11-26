@@ -1957,7 +1957,7 @@ function pixelSprite(kind){
 function renderMiniGame(n){
   const s=stage();
   if(n===1){
-    gameState.step=0;gameState.attempts=0;gameState.vaultCode=[0,1,2,3].sort(()=>Math.random()-.5);gameState.guess=[-1,-1,-1,-1];
+    gameState.step=0;gameState.attempts=0;gameState.vaultCode=[2,0,3,1];gameState.guess=[-1,-1,-1,-1];
     s.innerHTML=`<div class="mini-score">CRACK THE ROYAL VAULT!</div><div class="mini-hint">Set all 4 runes, then press UNLOCK. Gold means right rune AND right place.</div><div class="vault-slots" id="vaultSlots"></div><div class="vault-runes" id="vaultRunes"><button onclick="pickRune(0)" aria-label="Heart rune">${pixelSprite('heart')}</button><button onclick="pickRune(1)" aria-label="Star rune">${pixelSprite('star')}</button><button onclick="pickRune(2)" aria-label="Crown rune">${pixelSprite('crown')}</button><button onclick="pickRune(3)" aria-label="Diamond rune">${pixelSprite('diamond')}</button></div><button class="mini-action" onclick="submitVault()">UNLOCK VAULT ▶</button><div class="mini-hint" id="vaultHint">6 ATTEMPTS · NO REPEATS</div><div class="vault-history" id="vaultHistory"></div>`;
     drawVault();
   }else if(n===2){
@@ -2153,7 +2153,7 @@ audio.src='';
 
 async function toggleMusic(){
   if(!audio.src||audio.src===location.href){
-    status.textContent='add your instrumental mp3 link in the HTML';
+    status.textContent='https://hipstrumentals.com/wp-content/uploads/2026/10/Bastille-Flaws-Instrumental-Prod.-By-Dan-Smith-Mark-Crew.mp3?utm_source=chatgpt.com';
     return;
   }
 
